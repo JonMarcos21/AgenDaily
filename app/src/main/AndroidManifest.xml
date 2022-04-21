@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgenDaily">
         <activity
-            android:name=".MainActivity"
+            android:name=".Formulario"
+            android:exported="true" />
+        <activity
+            android:name=".Autenticacion"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

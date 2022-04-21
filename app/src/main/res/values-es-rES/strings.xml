@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AgenDaily</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="registrar">Registrarse</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="invitado">Entrar como invitado</string>
+    <string name="crear_cuenta">Crear cuenta en AgenDaily</string>
+</resources>

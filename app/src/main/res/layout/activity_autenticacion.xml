@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris"
+    tools:context=".Autenticacion">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="189dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="73dp"
+        android:contentDescription="imagen logo"
+        app:srcCompat="@drawable/logoapp" />
+
+    <EditText
+        android:id="@+id/contraseñaInicio"
+        android:layout_width="233dp"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="80dp"
+        android:ems="10"
+        android:hint="@string/contraseña"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/azul_oscuro"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/correoInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignBottom="@+id/contraseñaInicio"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="49dp"
+        android:hint="@string/email"
+        android:textAlignment="center"
+        android:textColor="@color/azul_oscuro"
+        android:textColorHint="@color/azul_oscuro"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="410dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/button_rounder"
+        android:onClick="invitado"
+        android:text="@string/registrar"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnRegistrar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="54dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/iniciar_sesion"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtInvitado"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="533dp"
+        android:layout_marginEnd="80dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:onClick="invitado"
+        android:text="@string/invitado"
+        android:textColor="#2196F3"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
