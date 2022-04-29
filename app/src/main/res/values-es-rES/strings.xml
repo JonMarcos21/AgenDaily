@@ -5,6 +5,8 @@
     <string name="contraseña">Contraseña</string>
     <string name="registrar">Registrarse</string>
     <string name="iniciar_sesion">Iniciar sesión</string>
-    <string name="invitado">Entrar como invitado</string>
+    <string name="invitado"><u>Entrar como invitado</u></string>
     <string name="crear_cuenta">Crear cuenta en AgenDaily</string>
+    <string name="nombre">Nombre</string>
+    <string name="recordar_contraseña"><u> He olvidado mi contraseña </u></string>
 </resources>

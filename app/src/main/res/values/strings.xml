@@ -4,6 +4,8 @@
     <string name="contraseña">Password</string>
     <string name="registrar">Sign up</string>
     <string name="iniciar_sesion">Log in</string>
-    <string name="invitado">Enter as a guest</string>
+    <string name="invitado"><u>Enter as a guest</u></string>
     <string name="crear_cuenta">Create account in AgenDaily</string>
+    <string name="nombre">Name</string>
+    <string name="recordar_contraseña"><u> I forgot my password </u></string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.agendaily;
+package com.example.agendaily2;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.agendaily;
+package com.example.agendaily2;
 
 import android.content.Context;
 

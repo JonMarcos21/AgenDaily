@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "966665617133",
+    "project_id": "proyectodam-6bfdc",
+    "storage_bucket": "proyectodam-6bfdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966665617133:android:5480008a6d2b0a5e6616e4",
+        "android_client_info": {
+          "package_name": "com.example.agendaily2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966665617133-nonm4fhquka07tqgklmugbeojup8d7gq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYxrKYB5CtOqo8ltfguEP7HDQWuhKLDjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966665617133-nonm4fhquka07tqgklmugbeojup8d7gq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
