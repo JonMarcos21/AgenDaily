@@ -8,4 +8,11 @@
     <string name="crear_cuenta">Create account in AgenDaily</string>
     <string name="nombre">Name</string>
     <string name="recordar_contraseña"><u> I forgot my password </u></string>
+    <string name="enviar">Send</string>
+    <string name="Diario">Newspaper</string>
+    <string name="Notas">Grades</string>
+    <string name="avisos">Warnings</string>
+    <string name="calendario">Calendar</string>
+    <!-- Strings used for fragments for navigation -->
+
 </resources>

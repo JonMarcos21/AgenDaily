@@ -52,6 +52,16 @@ public class Autenticacion extends AppCompatActivity {
 
     }
 
+    //boton para acceder al reseteo de la contraseña
+
+    public void contrasena(View view){
+
+        Intent contrasena = new Intent(this, ContrasenaOlvidada.class);
+        startActivity(contrasena);
+        finish();
+
+    }
+
     public void menu(View view){
 
         Intent menu = new Intent(this, Menu.class);

@@ -7,4 +7,62 @@
     tools:context=".Menu"
     android:background="@color/gris">
 
+    <Button
+        android:id="@+id/btnDiario"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/Diario"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnNotas"
+        android:layout_width="wrap_content"
+        android:layout_height="97dp"
+        android:layout_below="@+id/btnDiario"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="77dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/Notas"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnAvisos"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:layout_below="@+id/btnDiario"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="77dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/avisos"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnCalendario"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:layout_below="@+id/btnDiario"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="77dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/calendario"
+        android:textSize="20dp" />
 </RelativeLayout>

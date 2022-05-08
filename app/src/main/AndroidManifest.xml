@@ -10,16 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgenDaily">
         <activity
-            android:name="com.example.agendaily2.Menu"
+            android:name=".Notas"
             android:exported="true" />
         <activity
-            android:name="com.example.agendaily2.Formulario"
+            android:name=".Avisos"
             android:exported="true" />
         <activity
-            android:name="com.example.agendaily2.Autenticacion"
+            android:name=".Diario"
             android:exported="true" />
         <activity
-            android:name="com.example.agendaily2.SplashScreen"
+            android:name=".ContrasenaOlvidada"
+            android:exported="true" />
+        <activity
+            android:name=".Menu"
+            android:exported="true" />
+        <activity
+            android:name=".Formulario"
+            android:exported="true" />
+        <activity
+            android:name=".Autenticacion"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

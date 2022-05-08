@@ -9,4 +9,9 @@
     <string name="crear_cuenta">Crear cuenta en AgenDaily</string>
     <string name="nombre">Nombre</string>
     <string name="recordar_contraseña"><u> He olvidado mi contraseña </u></string>
+    <string name="enviar">Enviar</string>
+    <string name="Diario">Diario</string>
+    <string name="Notas">Notas</string>
+    <string name="avisos">Avisos</string>
+    <string name="calendario">Calendar</string>
 </resources>
