@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgenDaily">
         <activity
+            android:name=".Calendario"
+            android:exported="true" />
+        <activity
             android:name=".Notas"
             android:exported="true" />
         <activity
