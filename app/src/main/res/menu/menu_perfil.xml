@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/mnBorrarCuenta"
+        android:title="@string/borrar_cuenta" />
+    <item
+        android:id="@+id/mnLogOut"
+        android:title="@string/log_out"/>
+    <item
+        android:id="@+id/mnPremium"
+        android:title="@string/hacerse_premium"/>
+</menu>

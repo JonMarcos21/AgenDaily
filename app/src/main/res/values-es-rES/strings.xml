@@ -13,5 +13,11 @@
     <string name="Diario">Diario</string>
     <string name="Notas">Notas</string>
     <string name="avisos">Avisos</string>
-    <string name="calendario">Calendar</string>
+    <string name="calendario">Calendario</string>
+    <string name="volver">Volver</string>
+    <string name="info">Información</string>
+    <string name="borrar_cuenta">Borrar cuenta</string>
+    <string name="log_out">Cerrar sesion</string>
+    <string name="hacerse_premium">Haacerse premium</string>
+    <string name="perfil">Perfil</string>
 </resources>

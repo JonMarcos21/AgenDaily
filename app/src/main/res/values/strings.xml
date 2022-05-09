@@ -13,6 +13,12 @@
     <string name="Notas">Grades</string>
     <string name="avisos">Warnings</string>
     <string name="calendario">Calendar</string>
+    <string name="volver">Back</string>
+    <string name="info">information</string>
+    <string name="borrar_cuenta">Delete account</string>
+    <string name="log_out">Log out</string>
+    <string name="hacerse_premium">go premium</string>
+    <string name="perfil">Profile</string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>
