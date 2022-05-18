@@ -16,7 +16,7 @@ public class Menu extends AppCompatActivity {
 
     public void diario(View view){
 
-        Intent diario = new Intent(this, Diario.class);
+        Intent diario = new Intent(this, Usuario.class);
         startActivity(diario);
         finish();
 
@@ -39,6 +39,13 @@ public class Menu extends AppCompatActivity {
 
         Intent calendario = new Intent(this, Calendario.class);
         startActivity(calendario);
+        finish();
+
+    }
+    public void atrasabajo(View view){
+
+        Intent atras = new Intent(this, Autenticacion.class);
+        startActivity(atras);
         finish();
 
     }

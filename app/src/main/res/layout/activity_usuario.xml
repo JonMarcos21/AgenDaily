@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris"
+    tools:context=".Usuario">
+
+    <TextView
+        android:id="@+id/txtPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="151dp"
+        android:minHeight="48dp"
+        android:text="@string/Usuario"
+        android:textColor="@color/azul_claro"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtTituloPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="118dp"
+        android:text="@string/perfil"
+        android:textAlignment="center"
+        android:textColor="@color/azul_claro"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtCorreoTitulo"
+        android:layout_width="111dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="203dp"
+        android:layout_marginEnd="148dp"
+        android:text="@string/correoTitulo"
+        android:textColor="@color/azul_claro"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnBoorarCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="478dp"
+        android:layout_marginEnd="-2dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/borrar_cuenta" />
+
+    <Button
+        android:id="@+id/btnSalirCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="419dp"
+        android:layout_marginEnd="-2dp"
+        android:background="@drawable/button_rounder"
+        android:text="@string/log_out" />
+
+    <TextView
+        android:id="@+id/txtNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPerfil"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="153dp"
+        android:ems="10"
+        android:text="nombre"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/azul_oscuro"
+        android:textColorHint="@color/azul_oscuro" />
+
+    <TextView
+        android:id="@+id/txtCorreoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCorreoTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="153dp"
+        android:ems="10"
+        android:text="correo"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/azul_oscuro"
+        android:textColorHint="@color/azul_oscuro" />
+</RelativeLayout>

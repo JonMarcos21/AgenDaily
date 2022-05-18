@@ -132,4 +132,19 @@
         android:text="@string/calendario"
         android:textSize="20dp" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="559dp"
+        android:layout_marginEnd="353dp"
+        android:contentDescription="flecha"
+        android:onClick="atrasabajo"
+        app:srcCompat="@drawable/flechabaja"
+        tools:ignore="TouchTargetSizeCheck" />
+
 </RelativeLayout>

@@ -19,6 +19,8 @@
     <string name="log_out">Log out</string>
     <string name="hacerse_premium">go premium</string>
     <string name="perfil">Profile</string>
+    <string name="Usuario"><u>User name</u></string>
+    <string name="correoTitulo"><u> Email </u></string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>

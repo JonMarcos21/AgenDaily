@@ -20,4 +20,6 @@
     <string name="log_out">Cerrar sesion</string>
     <string name="hacerse_premium">Haacerse premium</string>
     <string name="perfil">Perfil</string>
+    <string name="Usuario"><u>Nombre de usuario </u></string>
+    <string name="correoTitulo">"<u> Correo Electrónico </u> "</string>
 </resources>

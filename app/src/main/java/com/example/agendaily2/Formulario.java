@@ -88,6 +88,13 @@ public class Formulario extends AppCompatActivity {
             }
         });
     }
+    public void atras(View view){
+
+        Intent atras = new Intent(this, Autenticacion.class);
+        startActivity(atras);
+        finish();
+
+    }
 
     //metodo de regitrar usuario
 
@@ -128,6 +135,8 @@ public class Formulario extends AppCompatActivity {
                 }
             }
         });
+
+
 
     }
 }
