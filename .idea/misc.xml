@@ -14,13 +14,18 @@
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/activity_diario.xml" value="0.340625" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/activity_formulario.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/activity_menu.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/activity_notas.xml" value="0.3546875" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/activity_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/calendar_cell.xml" value="0.16843971631205673" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/content_avisos.xml" value="0.3546875" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/fragment_first.xml" value="0.3546875" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/fragment_second.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/splash_screen.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/layout/toolbar.xml" value="0.16843971631205673" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_ayuda.xml" value="0.3351851851851852" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_perfil.xml" value="0.3546875" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_principal.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_principal1.xml" value="0.3546875" />
       </map>
     </option>
   </component>

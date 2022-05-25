@@ -1,69 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gris">
-    <!--
-    app:cardCornerRadius="10dp"
-    app:cardElevation="3dp"
     android:background="@color/gris"
-    app:cardUseCompatPadding="true"
-    -->
+    tools:context=".Menu">
 
+    <include
 
-    <!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
-        android:background="@color/gris"
-        android:orientation="vertical">
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
 
-        <RelativeLayout
-            android:id="@+id/rvColor"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/azul_claro"
-            android:onClick="diario"
-            android:orientation="horizontal"
-            android:padding="40dp">
-
-
-            <ImageView
-                android:id="@+id/iconImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="57dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="204dp"
-                android:contentDescription="@string/Diario"
-                tools:srcCompat="@drawable/diario" />
-
-            <TextView
-                android:id="@+id/minijuego"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="133dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
-                android:text="@string/Diario"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-
-        </RelativeLayout>
-    </LinearLayout>
-
--->
+        />
 
     <Button
         android:id="@+id/btnDiario"
@@ -72,9 +22,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/button_rounder"
         android:drawableLeft="@drawable/diariologo"
         android:onClick="diario"
@@ -122,9 +72,9 @@
         android:layout_below="@+id/btnDiario"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="280dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="77dp"
         android:background="@drawable/button_rounder"
         android:drawableLeft="@drawable/calendario"
@@ -139,9 +89,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="559dp"
-        android:layout_marginEnd="353dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="617dp"
+        android:layout_marginEnd="352dp"
         android:contentDescription="flecha"
         android:onClick="atrasabajo"
         app:srcCompat="@drawable/flechabaja"
