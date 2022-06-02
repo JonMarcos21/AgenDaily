@@ -3,10 +3,8 @@ package com.example.agendaily2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.WindowManager;
 
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 
@@ -39,7 +37,7 @@ public class SplashScreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(SplashScreen.this, Menu.class);
+                    Intent intent = new Intent(SplashScreen.this, Menus.class);
                     startActivity(intent);
                     finish();
                 }

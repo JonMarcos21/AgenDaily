@@ -212,8 +212,9 @@ public class ComponentAgendaily {
         openForWrite();
         long registers = 0;
         ContentValues content = new ContentValues();
-        content.put("TITLE", diario.getFecha());
+        content.put("FECHA", diario.getFecha());
         content.put("DESCRIPTION", diario.getDescription());
+        content.put("ENCODE", diario.getEncode());
         content.put("USER_ID", diario.getUserId().getUserId());
         registers = agendas.insert("DIARIO", null, content);
         close();
@@ -237,8 +238,9 @@ public class ComponentAgendaily {
         openForWrite();
         long registers = 0;
         ContentValues content = new ContentValues();
-        content.put("TITLE", diario.getFecha());
+        content.put("FECHA", diario.getFecha());
         content.put("DESCRIPTION", diario.getDescription());
+        content.put("ENCODE", diario.getEncode());
         content.put("USER_ID", diario.getUserId().getUserId());
         registers = agendas.update("DIARIO", content, "DIARIO_ID = " + diarioId, null);
         close();
@@ -250,7 +252,7 @@ public class ComponentAgendaily {
      */
     public Diario readDiario(Integer diarioId) {
         openForWrite();
-        Cursor cursor = agendas.rawQuery("select DIARIO_ID, FECHA, DESCRIPTION, USER_ID" +
+        Cursor cursor = agendas.rawQuery("select DIARIO_ID, FECHA, DESCRIPTION,ENCODE, USER_ID" +
                 " from DIARIO where DIARIO_ID = " + diarioId, new String[]{});
         if (cursor.getCount() == 0) {
             cursor.close();
@@ -259,8 +261,8 @@ public class ComponentAgendaily {
         }
         Diario diario = null;
         if (cursor.moveToFirst()) {
-            diario = new Diario(cursor.getInt(0), cursor.getString(1), cursor.getString(2)
-                    , new User(cursor.getInt(3)));
+            diario = new Diario(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
+                    cursor.getInt(3), new User(cursor.getInt(4)));
         }
         cursor.close();
         close();
@@ -272,7 +274,7 @@ public class ComponentAgendaily {
      */
     public ArrayList<Diario> readDiarios() {
         openForWrite();
-        Cursor cursor = agendas.rawQuery("select DIARIO_ID, FECHA, DESCRIPTION, USER_ID from DIARIO", null);
+        Cursor cursor = agendas.rawQuery("select DIARIO_ID, FECHA, DESCRIPTION,ENCODE, USER_ID from DIARIO", null);
         if (cursor.getCount() == 0) {
             cursor.close();
             close();
@@ -281,7 +283,7 @@ public class ComponentAgendaily {
         ArrayList<Diario> listDiario = new ArrayList<>();
         while (cursor.moveToNext()) {
             listDiario.add(new Diario(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
-                    readUser(cursor.getInt(3))));
+                    cursor.getInt(3),readUser(cursor.getInt(4))));
         }
         cursor.close();
         close();

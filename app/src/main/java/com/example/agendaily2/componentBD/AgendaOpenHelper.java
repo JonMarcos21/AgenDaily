@@ -18,16 +18,16 @@ public class AgendaOpenHelper extends SQLiteOpenHelper {
      *Se crean las tablas de la BDD
      */
     @Override
-    public void onCreate(SQLiteDatabase agenda) {
+    public void onCreate(SQLiteDatabase agendas) {
 
-        agenda.execSQL("create table USER(USER_ID Integer primary key autoincrement, EMAIL text not null UNIQUE," +
+        agendas.execSQL("create table USER(USER_ID Integer primary key autoincrement, EMAIL text not null UNIQUE," +
                 " PASSWORD text not null)");
 
-        agenda.execSQL("create table NOTE(NOTE_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +
+        agendas.execSQL("create table NOTE(NOTE_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +
                 " ENCODE Integer DEFAULT 0 , USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
-        agenda.execSQL("create table DIARIO(DIARIO_ID Integer primary key autoincrement, FECHA text, DESCRIPTION text," +
-                "  USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
-        agenda.execSQL("create table RECORDATORIO(RECORDATORIO_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +
+        agendas.execSQL("create table DIARIO(DIARIO_ID Integer primary key autoincrement, FECHA text, DESCRIPTION text," +
+                " ENCODE Integer DEFAULT 0 , USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
+        agendas.execSQL("create table RECORDATORIO(RECORDATORIO_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +
                 " HORA Integer default 0, USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
 
     }
@@ -36,14 +36,14 @@ public class AgendaOpenHelper extends SQLiteOpenHelper {
      *En caso de que existan las tablas, se borrán y se crean de nuevo
      */
     @Override
-    public void onUpgrade(SQLiteDatabase agenda, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase agendas, int i, int i1) {
 
-        agenda.execSQL("drop table USER");
-        agenda.execSQL("drop table NOTE");
-        agenda.execSQL("drop table DIARIO");
-        agenda.execSQL("drop table RECORDATORIO");
+        agendas.execSQL("drop table USER");
+        agendas.execSQL("drop table NOTE");
+        agendas.execSQL("drop table DIARIO");
+        agendas.execSQL("drop table RECORDATORIO");
 
-        onCreate(agenda);
+        onCreate(agendas);
     }
 }
 

@@ -1,6 +1,5 @@
 package com.example.agendaily2;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,10 +13,6 @@ import android.widget.Toast;
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 import com.example.agendaily2.hash.Sha;
 import com.example.agendaily2.pojos.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -144,7 +139,7 @@ public class Autenticacion extends AppCompatActivity {
 
     public void goTOMenu(){
 
-        Intent menu = new Intent(this, Menu.class);
+        Intent menu = new Intent(this, Menus.class);
         startActivity(menu);
         finish();
 

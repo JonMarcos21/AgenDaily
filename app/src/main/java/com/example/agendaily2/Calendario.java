@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.agendaily2.adapters.CalendarAdapter;
 
@@ -54,7 +53,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.volver:
-                Intent intent = new Intent(Calendario.this, Menu.class);
+                Intent intent = new Intent(Calendario.this, Menus.class);
                 startActivity(intent);
                 break;
 
@@ -67,7 +66,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
     }
     public void atrasCalendario(View view){
 
-        Intent atrasCal = new Intent(this, Menu.class);
+        Intent atrasCal = new Intent(this, Menus.class);
         startActivity(atrasCal);
         finish();
 

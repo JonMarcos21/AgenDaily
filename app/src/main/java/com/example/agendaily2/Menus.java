@@ -10,7 +10,7 @@ import android.view.View;
 import com.example.agendaily2.activitysnotas.Notas;
 
 
-public class Menu extends AppCompatActivity  {
+public class Menus extends AppCompatActivity  {
 
 
 
@@ -31,11 +31,11 @@ public class Menu extends AppCompatActivity  {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mnPerfil:
-                Intent intent = new Intent(Menu.this, Usuario.class);
+                Intent intent = new Intent(Menus.this, Usuario.class);
                 startActivity(intent);
                 break;
             case R.id.mnvolver:
-                 Intent intent2 = new Intent(Menu.this, Autenticacion.class);
+                 Intent intent2 = new Intent(Menus.this, Autenticacion.class);
                 startActivity(intent2);
                 break;
             case R.id.mnInfo:
@@ -49,7 +49,7 @@ public class Menu extends AppCompatActivity  {
 
     public void diario(View view){
 
-        Intent diario = new Intent(this, Usuario.class);
+        Intent diario = new Intent(this, Diarios.class);
         startActivity(diario);
         finish();
 

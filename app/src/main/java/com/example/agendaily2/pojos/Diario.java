@@ -10,15 +10,17 @@ public class Diario implements Serializable {
     private Integer diarioId;
     private String fecha;
     private String description;
+    private Integer encode;
     private User userId;
 
     public Diario() {
     }
 
-    public Diario(Integer diarioId, String fecha, String description, User userId) {
+    public Diario(Integer diarioId, String fecha, String description, Integer encode, User userId) {
         this.diarioId = diarioId;
         this.fecha = fecha;
         this.description = description;
+        this.encode = encode;
         this.userId = userId;
     }
 
@@ -46,6 +48,14 @@ public class Diario implements Serializable {
         this.description = description;
     }
 
+    public Integer getEncode() {
+        return encode;
+    }
+
+    public void setEncode(Integer encode) {
+        this.encode = encode;
+    }
+
     public User getUserId() {
         return userId;
     }
@@ -60,6 +70,7 @@ public class Diario implements Serializable {
                 "diarioId=" + diarioId +
                 ", fecha='" + fecha + '\'' +
                 ", description='" + description + '\'' +
+                ", encode=" + encode +
                 ", userId=" + userId +
                 '}';
     }
