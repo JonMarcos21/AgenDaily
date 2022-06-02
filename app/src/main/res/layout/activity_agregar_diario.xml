@@ -28,7 +28,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/button_floating"
-        android:onClick="confirmNote"
+        android:onClick="confirmDiario"
         android:text="+"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
