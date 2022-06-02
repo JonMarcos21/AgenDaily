@@ -3,10 +3,13 @@ package com.example.agendaily2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +39,7 @@ public class Usuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
 
-        usuario = (TextView) findViewById(R.id.txtNombreUsuario);
+
         email = (TextView) findViewById(R.id.txtCorreoUsuario);
         //Instancia Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -47,6 +50,27 @@ public class Usuario extends AppCompatActivity {
         //método para pasar una variable de la base de datos a la activity
 
 
+    }
+    /*
+     *Se crea el menu para acceder al usuario o monstrar información en el ActionBar
+     */
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_perfil, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mnBorrarCuenta:
+                break;
+            case R.id.mnLogOut:
+                Intent intent = new Intent(Usuario.this, Autenticacion.class);
+                startActivity(intent);
+                break;
+            case R.id.mnPremium:
+                Toast.makeText(this, "No disponible en estos momentos", Toast.LENGTH_SHORT).show();
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void getUserInfo(){

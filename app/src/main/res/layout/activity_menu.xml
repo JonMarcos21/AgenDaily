@@ -8,12 +8,6 @@
     android:background="@color/gris"
     tools:context=".Menu">
 
-    <include
-
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-
-        />
 
     <Button
         android:id="@+id/btnDiario"
@@ -22,9 +16,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/azul_claro"
+        android:layout_marginEnd="6dp"
         android:background="@drawable/button_rounder"
         android:drawableLeft="@drawable/diariologo"
         android:onClick="diario"
@@ -35,6 +30,7 @@
         android:id="@+id/btnNotas"
         android:layout_width="wrap_content"
         android:layout_height="97dp"
+        android:backgroundTint="@color/azul_claro"
         android:layout_below="@+id/btnDiario"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -54,6 +50,7 @@
         android:layout_height="110dp"
         android:layout_below="@+id/btnDiario"
         android:layout_alignParentStart="true"
+        android:backgroundTint="@color/azul_claro"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="7dp"
         android:layout_marginTop="140dp"
@@ -71,6 +68,7 @@
         android:layout_height="110dp"
         android:layout_below="@+id/btnDiario"
         android:layout_alignParentStart="true"
+        android:backgroundTint="@color/azul_claro"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="3dp"
         android:layout_marginTop="280dp"
@@ -82,19 +80,15 @@
         android:text="@string/calendario"
         android:textSize="20dp" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
+   <!-- <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="468dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="617dp"
-        android:layout_marginEnd="352dp"
-        android:contentDescription="flecha"
-        android:onClick="atrasabajo"
-        app:srcCompat="@drawable/flechabaja"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:layout_marginTop="117dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/agenda_animacion" /> -->
+
 
 </RelativeLayout>

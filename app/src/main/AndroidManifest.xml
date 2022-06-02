@@ -8,7 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AgenDaily">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activitysnotas.AgregarNota"
+            android:exported="true" />
         <activity
             android:name=".Usuario"
             android:exported="true" />
@@ -16,7 +19,7 @@
             android:name=".Calendario"
             android:exported="true" />
         <activity
-            android:name=".Notas"
+            android:name=".activitysnotas.Notas"
             android:exported="true" />
         <activity
             android:name=".Avisos"

@@ -9,11 +9,7 @@
     android:background="@color/gris"
     tools:context=".Calendario">
 
-    <include
-        layout="@layout/toolbar"
 
-
-        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,8 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="atras"
+            android:backgroundTint="@color/azul_claro"
             android:textColor="@color/blanco"
-            android:background="@null"
+            android:background="@drawable/button_rounder"
             android:textStyle="bold"
             android:onClick="previousMonthAction"
             android:textSize="10sp"/>
@@ -47,7 +44,8 @@
             android:layout_weight="1"
             android:text="siguiente"
             android:textColor="@color/blanco"
-            android:background="@null"
+            android:backgroundTint="@color/azul_claro"
+            android:background="@drawable/button_rounder"
             android:textStyle="bold"
             android:onClick="nextMonthAction"
             android:textSize="10sp"/>
@@ -135,12 +133,10 @@
         android:id="@+id/btnflechacalendario"
         android:layout_width="70dp"
         android:layout_height="48dp"
-        android:layout_gravity="left"
         android:baselineAlignBottom="false"
         android:contentDescription="flecha"
         android:foregroundGravity="left"
         android:onClick="atrasCalendario"
-        android:textAlignment="viewStart"
         app:srcCompat="@drawable/flechabaja"
         tools:ignore="SpeakableTextPresentCheck" />
 

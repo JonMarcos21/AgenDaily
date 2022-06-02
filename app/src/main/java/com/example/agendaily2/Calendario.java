@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.example.agendaily2.adapters.CalendarAdapter;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -24,7 +27,6 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
 
-    private Toolbar toolbar;
 
     // creacion del calendario
 
@@ -40,10 +42,28 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
         setMonthView();
 
 
-        //toolbar
-    toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+    }
+    /*
+     *Se crea el menu para acceder al usuario o monstrar información en el ActionBar
+     */
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_ayuda, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.volver:
+                Intent intent = new Intent(Calendario.this, Menu.class);
+                startActivity(intent);
+                break;
 
+            case R.id.infoboton:
+
+            break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
     public void atrasCalendario(View view){
 

@@ -26,6 +26,35 @@
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_perfil.xml" value="0.3546875" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_principal.xml" value="0.3546875" />
         <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDaily2/app/src/main/res/menu/menu_principal1.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable-v24/button_floating.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable-v24/ic_security.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable-v24/ic_settings.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable/boton_redondo.xml" value="0.2324074074074074" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable/button_rounder.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable/confirmar.xml" value="0.23148148148148148" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/drawable/progreso.xml" value="0.2324074074074074" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_agregar_diario.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_agregar_nota.xml" value="0.33" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_autenticacion.xml" value="0.33" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_calendario.xml" value="0.33" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_contrasenaolvidada.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_diario.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_formulario.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_menu.xml" value="0.25" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_notas.xml" value="0.33" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/activity_usuario.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/dialog_password.xml" value="0.33" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/listview_item.xml" value="0.25" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/progress_dialog_save.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/splash_screen.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/layout/toolbar.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_ayuda.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_edit_text_share.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_notas.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_perfil.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_principal.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_principal1.xml" value="0.3546875" />
+        <entry key="..\:/Users/jonma/AndroidStudioProjects/AgenDailyPrueba/app/src/main/res/menu/menu_settings.xml" value="0.33" />
       </map>
     </option>
   </component>

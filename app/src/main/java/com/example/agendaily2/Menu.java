@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+
+import com.example.agendaily2.activitysnotas.Notas;
 
 
 public class Menu extends AppCompatActivity  {
@@ -18,7 +21,29 @@ public class Menu extends AppCompatActivity  {
 
     }
 
+    /*
+     *Se crea el menu para acceder al usuario o monstrar información en el ActionBar
+     */
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mnPerfil:
+                Intent intent = new Intent(Menu.this, Usuario.class);
+                startActivity(intent);
+                break;
+            case R.id.mnvolver:
+                 Intent intent2 = new Intent(Menu.this, Autenticacion.class);
+                startActivity(intent2);
+                break;
+            case R.id.mnInfo:
+                break;
 
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 

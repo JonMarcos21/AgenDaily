@@ -21,6 +21,15 @@
     <string name="perfil">Profile</string>
     <string name="Usuario"><u>User name</u></string>
     <string name="correoTitulo"><u> Email </u></string>
+    <string name="myNotes">My notes</string>
+    <string name="contraseña2">Repeat Password</string>
+    <string name="campos">Fields must be completed</string>
+    <string name="coincidir">Passwords do not match</string>
+    <string name="lista">Note List</string>
+    <string name="agregar_editar">Add/edit note</string>
+    <string name="borrar_nota">Delete note</string>
+    <string name="editar_nota">Edit note</string>
+    <string name="Ocultar">Ocult note</string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>
