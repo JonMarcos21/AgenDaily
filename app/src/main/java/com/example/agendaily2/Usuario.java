@@ -63,8 +63,7 @@ public class Usuario extends AppCompatActivity {
             case R.id.mnBorrarCuenta:
                 break;
             case R.id.mnLogOut:
-                Intent intent = new Intent(Usuario.this, Autenticacion.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.mnPremium:
                 Toast.makeText(this, "No disponible en estos momentos", Toast.LENGTH_SHORT).show();

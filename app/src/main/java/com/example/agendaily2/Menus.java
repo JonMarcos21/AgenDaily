@@ -35,8 +35,7 @@ public class Menus extends AppCompatActivity  {
                 startActivity(intent);
                 break;
             case R.id.mnvolver:
-                 Intent intent2 = new Intent(Menus.this, Autenticacion.class);
-                startActivity(intent2);
+                 finish();
                 break;
             case R.id.mnInfo:
                 break;

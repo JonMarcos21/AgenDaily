@@ -20,9 +20,11 @@ import com.example.agendaily2.pojos.Diario;
 import com.example.agendaily2.pojos.Note;
 import com.example.agendaily2.pojos.User;
 
+import java.text.SimpleDateFormat;
+
 public class AgregarDiario extends AppCompatActivity {
 
-    private EditText editTextFechaDiario, editTextDescriptionDiario;
+    private EditText  editTextDescriptionDiario ,editTextFechaDiario;
     private TextView textViewIdDiario, textViewEncodeDiario, textViewUserIdDiario;
     private ImageView imageViewAttachedDiario, imageViewDialogDiario;
     private ComponentAgendaily componentAgendaily;          //Objeto que nos permite realizar las operaciones con la BDD
@@ -50,6 +52,31 @@ public class AgregarDiario extends AppCompatActivity {
         textViewUserIdDiario = (TextView) findViewById(R.id.textViewUserIdDiario);
         imageViewAttachedDiario = (ImageView) findViewById(R.id.imageView);
 
+        //Hilo para que la fecha y la hora esten actualizadas
+
+        Thread t = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                EditText tdate = (EditText) findViewById(R.id.editTextFechaDiario);
+                                long date = System.currentTimeMillis();
+                                SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy");
+                                String dateString = sdf.format(date);
+                                tdate.setText(dateString);
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+        t.start();
+
          catchDiario();
     }
 
@@ -70,7 +97,9 @@ public class AgregarDiario extends AppCompatActivity {
             textViewEncodeDiario.setText(diarios.getEncode().toString());
             textViewUserIdDiario.setText(diarios.getUserId().getUserId().toString());
 
+
         }
+
     }
     /*
      *Se crean los botones del menú del ActionBar

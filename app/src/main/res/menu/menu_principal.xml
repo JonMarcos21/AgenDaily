@@ -4,10 +4,9 @@
 
     <item
         android:id="@+id/mnvolver"
-        android:icon="@android:drawable/ic_menu_revert"
+        android:icon="@drawable/logout"
         android:title="@string/volver"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/mnPerfil"
         android:icon="@drawable/login"

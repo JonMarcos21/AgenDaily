@@ -33,7 +33,7 @@ public class Autenticacion extends AppCompatActivity {
     Button inicio;
 
 
-    private String email ="";
+    private String email ="";               //variables para almcenar los edit text
     private String contraseña ="";
 
 

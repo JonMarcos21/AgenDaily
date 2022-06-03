@@ -60,9 +60,9 @@
                 android:id="@+id/textViewFechaDiario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fecha"
+                android:text="Fecha Actual"
                 android:textSize="24sp"
-                android:visibility="invisible" />
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/editTextFechaDiario"
@@ -70,7 +70,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_note"
                 android:ems="10"
-                android:inputType="date"
+                android:inputType="textMultiLine"
                 android:gravity="start|top"
                 android:hint="Fecha"
                 android:paddingLeft="5dp"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:text="Descripción"
                 android:textSize="24sp"
-                android:visibility="invisible" />
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/editTextDescriptionDiario"

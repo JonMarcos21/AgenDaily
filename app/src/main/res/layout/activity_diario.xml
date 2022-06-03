@@ -67,7 +67,7 @@
                 android:drawableLeft="@android:drawable/ic_menu_search"
                 android:hint="Buscar"
                 android:imeOptions="actionSearch"
-                android:inputType="date"
+                android:inputType="textMultiLine"
                 android:paddingLeft="10dp"
                 android:textColor="#776D6D" />
 
