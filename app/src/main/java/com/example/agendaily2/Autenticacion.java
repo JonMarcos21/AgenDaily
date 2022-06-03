@@ -140,7 +140,7 @@ public class Autenticacion extends AppCompatActivity {
                     Toast.makeText(this, "Fallo al registrar usuario", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                textViewNoMatch.setVisibility(View.VISIBLE);
+                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -24,7 +24,8 @@ public class AgendaOpenHelper extends SQLiteOpenHelper {
                 " PASSWORD text not null)");
 
         agendas.execSQL("create table NOTE(NOTE_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +
-                " ENCODE Integer DEFAULT 0 , USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
+                " IMAGE blob, ENCODE Integer DEFAULT 0, USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
+
         agendas.execSQL("create table DIARIO(DIARIO_ID Integer primary key autoincrement, FECHA text, DESCRIPTION text," +
                 " ENCODE Integer DEFAULT 0 , USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
         agendas.execSQL("create table RECORDATORIO(RECORDATORIO_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +

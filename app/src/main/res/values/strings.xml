@@ -9,9 +9,9 @@
     <string name="nombre">Name</string>
     <string name="recordar_contraseña"><u> I forgot my password </u></string>
     <string name="enviar">Send</string>
-    <string name="Diario">Newspaper</string>
+    <string name="Diario">Journal</string>
     <string name="Notas">Grades</string>
-    <string name="avisos">Warnings</string>
+    <string name="avisos">Reminders</string>
     <string name="calendario">Calendar</string>
     <string name="volver">Back</string>
     <string name="info">information</string>
@@ -19,7 +19,7 @@
     <string name="log_out">Log out</string>
     <string name="hacerse_premium">go premium</string>
     <string name="perfil">Profile</string>
-    <string name="Usuario"><u>User name</u></string>
+    <string name="Usuario">Username</string>
     <string name="correoTitulo"><u> Email </u></string>
     <string name="myNotes">My notes</string>
     <string name="contraseña2">Repeat Password</string>

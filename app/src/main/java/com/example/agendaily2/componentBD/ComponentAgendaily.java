@@ -126,6 +126,7 @@ public class ComponentAgendaily {
         ContentValues content = new ContentValues();
         content.put("TITLE", note.getTitle());
         content.put("DESCRIPTION", note.getDescription());
+        content.put("IMAGE", note.getImage());
         content.put("ENCODE", note.getEncode());
         content.put("USER_ID", note.getUserId().getUserId());
         registers = agendas.insert("NOTE", null, content);
@@ -153,6 +154,7 @@ public class ComponentAgendaily {
         ContentValues content = new ContentValues();
         content.put("TITLE", note.getTitle());
         content.put("DESCRIPTION", note.getDescription());
+        content.put("IMAGE", note.getImage());
         content.put("ENCODE", note.getEncode());
         content.put("USER_ID", note.getUserId().getUserId());
         registers = agendas.update("NOTE", content, "NOTE_ID = " + noteId, null);
@@ -165,7 +167,7 @@ public class ComponentAgendaily {
      */
     public Note readNote(Integer noteId) {
         openForWrite();
-        Cursor cursor = agendas.rawQuery("select NOTE_ID, TITLE, DESCRIPTION, ENCODE,USER_ID" +
+        Cursor cursor = agendas.rawQuery("select NOTE_ID, TITLE, DESCRIPTION, ENCODE, IMAGE, USER_ID" +
                 " from NOTE where NOTE_ID = " + noteId, new String[]{});
         if (cursor.getCount() == 0) {
             cursor.close();
@@ -175,7 +177,7 @@ public class ComponentAgendaily {
         Note note = null;
         if (cursor.moveToFirst()) {
             note = new Note(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
-                    cursor.getInt(3), new User(cursor.getInt(4)));
+                    cursor.getInt(3), cursor.getBlob(4), new User(cursor.getInt(5)));
         }
         cursor.close();
         close();

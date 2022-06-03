@@ -10,4 +10,11 @@
         android:title="Compartir"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/item_clip"
+        android:icon="@drawable/ic_attach"
+        android:title="@string/info"
+        app:showAsAction="ifRoom"
+        />
+
 </menu>

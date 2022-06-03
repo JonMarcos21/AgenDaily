@@ -1,10 +1,16 @@
 package com.example.agendaily2.activitysnotas;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,8 +63,62 @@ public class Notas extends AppCompatActivity {
                 showAlertDialog(note);
             }
         });
+        if (validatePermissions()) {
+            isPermission = true;
+        } else {
+            isPermission = false;
+        }
 
 
+    }
+
+    /**
+     * Pedimos los permisos al usuario
+     */
+    private boolean validatePermissions() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+            return true;
+        if (checkSelfPermission(READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            return true;
+        if (shouldShowRequestPermissionRationale(READ_EXTERNAL_STORAGE)) {
+            loadRecommendationDialog();
+        } else {
+            requestPermissions(new String[]{READ_EXTERNAL_STORAGE}, 100);
+        }
+        return false;
+    }
+
+    /**
+     * Comprobamos si se han concedido los permisos
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100) {
+            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                isPermission = true;
+            } else {
+                isPermission = false;
+            }
+        }
+    }
+
+    /**
+     * Mostramos una ventana de advertencia en caso de que no se hayan concedido los permisos
+     */
+    private void loadRecommendationDialog() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Permisos Desactivados");
+        alertDialogBuilder.setMessage("Debe aceptar los permisos para el correcto funcionamiento" +
+                " de la aplicación");
+        alertDialogBuilder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            public void onClick(DialogInterface dialogInterface, int i) {
+                requestPermissions(new String[]{READ_EXTERNAL_STORAGE}, 100);
+            }
+        });
+        alertDialogBuilder.show();
     }
 
 

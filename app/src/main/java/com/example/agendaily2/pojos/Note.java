@@ -8,10 +8,20 @@ public class Note implements Serializable {
     private Integer noteId;
     private String title;
     private String description;
+    private byte[] image;
     private Integer encode;
     private User userId;
 
     public Note() {
+    }
+
+    public Note(Integer noteId, String title, String description, Integer encode, byte[] image, User userId) {
+        this.noteId = noteId;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.encode = encode;
+        this.userId = userId;
     }
 
     public Note(Integer noteId, String title, String description, Integer encode, User userId) {
@@ -46,20 +56,28 @@ public class Note implements Serializable {
         this.description = description;
     }
 
-    public Integer getEncode() {
-        return encode;
-    }
-
-    public void setEncode(Integer encode) {
-        this.encode = encode;
-    }
-
     public User getUserId() {
         return userId;
     }
 
     public void setUserId(User userId) {
         this.userId = userId;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public Integer getEncode() {
+        return encode;
+    }
+
+    public void setEncode(Integer encode) {
+        this.encode = encode;
     }
 
     @Override
@@ -69,7 +87,6 @@ public class Note implements Serializable {
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", encode=" + encode +
-                ", userId=" + userId +
                 '}';
     }
 }

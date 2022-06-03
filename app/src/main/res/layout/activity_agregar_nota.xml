@@ -111,6 +111,17 @@
 
         </LinearLayout>
     </RelativeLayout>
+    <ImageView
+        android:id="@+id/imageViewCamaraNota"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:visibility="invisible"/>
+
     <TextView
         android:id="@+id/textViewEncode"
         android:layout_width="wrap_content"
