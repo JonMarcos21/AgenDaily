@@ -30,6 +30,7 @@
     <string name="borrar_nota">Delete note</string>
     <string name="editar_nota">Edit note</string>
     <string name="Ocultar">Ocult note</string>
+    <string name="buscar_fecha">Search for date</string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>

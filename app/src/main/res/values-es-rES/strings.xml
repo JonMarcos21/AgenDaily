@@ -31,4 +31,5 @@
     <string name="borrar_nota">Borrar nota</string>
     <string name="editar_nota">Editar nota</string>
     <string name="Ocultar">Ocultar nota</string>
+    <string name="buscar_fecha">Buscar por fecha</string>
 </resources>

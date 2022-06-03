@@ -6,12 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.agendaily2.activitysnotas.AgregarNota;
@@ -25,11 +28,12 @@ import com.example.agendaily2.pojos.Note;
 import com.example.agendaily2.pojos.User;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Diarios extends AppCompatActivity {
 
     private ListView listViewDiario;
-
+    private EditText editTextSearch;
 
     private ComponentAgendaily componentAgendaily;          //Objeto que nos permite realizar las operaciones con la BDD
     private ArrayList<Diario> listDiarios;              //ArrayList que contendrá todas las notas de la BDD
@@ -48,9 +52,22 @@ public class Diarios extends AppCompatActivity {
         isUpdate = false;
 
         componentAgendaily = new ComponentAgendaily(this);
+        editTextSearch = (EditText) findViewById(R.id.editTextSearch);
         listViewDiario = (ListView) findViewById(R.id.listViewDiario);
 
         fillListView();
+        //Indicamos que el editTextSearch este pendiente del boton ENTER del teclado del usuario
+        editTextSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    performSearch();
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
         listViewDiario.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -84,6 +101,31 @@ public class Diarios extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    /**
+     * Buscamos una nota por su titulo a partir del String que ingrese el usuario en el editTextSearch
+     */
+    private void performSearch() {
+        if (listDiarios != null) {
+
+            //Clonamos el ArrayList listNotes para no tener que hacer una consulta a la base de datos
+            ArrayList<Diario> diarioCopy = (ArrayList<Diario>) listDiarios.clone();
+            if (editTextSearch.getText().toString().isEmpty()) {
+                //Si editTextSearch está vacío y se le da al ENTER con el teclado volvemos a mostrar todas las notas
+                fillListView(diarioCopy);
+            } else {
+                //Buscamos todas las notas que coincidan con el String de editTextSearch
+                ArrayList<Diario> diarios = new ArrayList<Diario>();
+                Iterator itr = diarioCopy.iterator();
+                while (itr.hasNext()) {
+                    Diario diario = (Diario) itr.next();
+                    if (diario.getFecha().toLowerCase().contains(editTextSearch.getText().toString().toLowerCase())) {
+                        diarios.add(diario);
+                    }
+                }
+                fillListView(diarios);
+            }
+        }
     }
     /*
      *Según el atributo Encode de Note mostramos el la ventana con las opciones de la nota o pedimos la contraseña

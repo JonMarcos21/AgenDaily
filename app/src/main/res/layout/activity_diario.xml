@@ -41,7 +41,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <RelativeLayout
         android:id="@+id/relativeLayout3"
         android:layout_width="350dp"
@@ -57,6 +56,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextSearch"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounder"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:hint="Buscar"
+                android:imeOptions="actionSearch"
+                android:inputType="date"
+                android:paddingLeft="10dp"
+                android:textColor="#776D6D" />
 
             <ListView
                 android:id="@+id/listViewDiario"

@@ -1,6 +1,7 @@
 package com.example.agendaily2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.PatternsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +33,8 @@ public class Autenticacion extends AppCompatActivity {
     Button inicio;
 
 
+    private String email ="";
+    private String contraseña ="";
 
 
     @Override
@@ -53,6 +56,35 @@ public class Autenticacion extends AppCompatActivity {
         userLogin();
 
         checkActivity();
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                email = editTextEmail.getText().toString();
+                contraseña= editTextPassword.getText().toString();
+
+                //hacemos un if para que en caso de que los campos esten completos se lanze el metodo registeruser
+                if (!email.isEmpty() && !contraseña.isEmpty()){
+
+                    if(contraseña.length()>=6){
+                        singIn();
+
+
+                    }
+                    //un else para que cuando la contraseña no tenga mas de 6 caracteres salte un toast
+                    else{
+                        Toast.makeText(Autenticacion.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }
+                // salta un toast si los campos no estan completos
+                else {
+                    Toast.makeText(Autenticacion.this, "Debe completar los campos ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     /**
@@ -81,10 +113,12 @@ public class Autenticacion extends AppCompatActivity {
         }
     }
 
+
     /**
      * Insertamos un usuario con los datos recogidos de los campos del activity en la BDD
      */
-    public void singIn(View view) {
+    public void singIn() {
+
         //Comprobamos que ningun de los EditText esté vacío
         //En caso de que alguno esté mostramos un TextView que pone que "Se deben de completar todos los campos"
         if (editTextEmail.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty() ||
@@ -99,6 +133,7 @@ public class Autenticacion extends AppCompatActivity {
                 textViewNoMatch.setVisibility(View.INVISIBLE);
                 //Leemos los datos de la interfaz, hacemos un insert en la BDD y lanzamos MainActivity
                 User user = new User(editTextEmail.getText().toString(), passwordConvertHash(editTextPassword));
+
                 if (componentAgendaily.insertUser(user) != 0) {
                     goTOMenu();
                 } else {
