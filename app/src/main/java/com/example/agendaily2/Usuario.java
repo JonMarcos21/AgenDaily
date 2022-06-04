@@ -1,11 +1,14 @@
 package com.example.agendaily2;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -62,38 +65,24 @@ public class Usuario extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.mnBorrarCuenta:
                 break;
-            case R.id.mnLogOut:
-                finish();
-                break;
+
             case R.id.mnPremium:
                 Toast.makeText(this, "No disponible en estos momentos", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.volverMenu:
+                Intent intentvolver = new Intent(Usuario.this, Menus.class);
+                startActivity(intentvolver);
+                break;
 
         }
         return super.onOptionsItemSelected(item);
     }
-
-    private void getUserInfo(){
-        String id = mAuth.getCurrentUser().getUid();
-        mDatabase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                if(dataSnapshot.exists()){
-
-                    String nombre = dataSnapshot.child("nombre").getValue().toString();
-
-                    String correo = dataSnapshot.child("email").getValue().toString();
-                    usuario.setText( nombre);
-                    email.setText(correo);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+    public void contraseñanueva(View view){
+        Intent avisos = new Intent(this, Autenticacion.class);
+        startActivity(avisos);
+        finish();
     }
+
+
 
 }

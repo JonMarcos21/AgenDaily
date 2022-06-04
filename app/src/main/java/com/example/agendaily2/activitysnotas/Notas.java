@@ -126,7 +126,7 @@ public class Notas extends AppCompatActivity {
      *Se crea el boton  en el ActionBar
      */
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_notas, menu);
+        getMenuInflater().inflate(R.menu.menu_ayuda, menu);
         return true;
     }
 
@@ -137,11 +137,26 @@ public class Notas extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.nvolver:
+            case R.id.volver:
                 Intent intentvolver = new Intent(Notas.this, Menus.class);
                 startActivity(intentvolver);
                 break;
 
+            case R.id.infoboton:
+                //se prepara la alerta creando nueva instancia
+                AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+                //seleccionamos la cadena a mostrar
+                alertbox.setMessage(getString(R.string.menu_notas));
+                //elegimos un positivo SI y creamos un Listener
+                alertbox.setPositiveButton(getString(R.string.Entendido), new DialogInterface.OnClickListener() {
+                    //Funcion llamada cuando se pulsa el boton Si
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                    }
+                });
+                //mostramos el alertbox
+                alertbox.show();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,9 +1,11 @@
 package com.example.agendaily2.activitysnotas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -47,7 +49,7 @@ public class AgregarNota extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_nota);
         getSupportActionBar().setTitle("Editor de Notas");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         init();
@@ -122,17 +124,15 @@ public class AgregarNota extends AppCompatActivity {
         imageViewAttachedCamara = (ImageView) findViewById(R.id.imageViewCamaraNota);
     }
 
+
     /*
      *Se crean los botones del menú del ActionBar
      */
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (!editTextTitle.getText().toString().isEmpty() || !editTextDescription.getText().toString().isEmpty()) {
-            getMenuInflater().inflate(R.menu.menu_edit_text_share, menu);
-            return true;
-        } else {
-            getMenuInflater().inflate(R.menu.menu_edit_text_attach, menu);
-            return true;
-        }
+
+        getMenuInflater().inflate(R.menu.menu_agregarnota, menu);
+        return true;
+
     }
 
     /*
@@ -147,6 +147,21 @@ public class AgregarNota extends AppCompatActivity {
 
             case R.id.item_share:
                 shareNote();
+                break;
+            case R.id.InfoAgregarNOtas:
+                //se prepara la alerta creando nueva instancia
+                AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+                //seleccionamos la cadena a mostrar
+                alertbox.setMessage(getString(R.string.menu_AgregarNota));
+                //elegimos un positivo SI y creamos un Listener
+                alertbox.setPositiveButton(getString(R.string.Entendido), new DialogInterface.OnClickListener() {
+                    //Funcion llamada cuando se pulsa el boton Si
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                    }
+                });
+                //mostramos el alertbox
+                alertbox.show();
                 break;
         }
         return super.onOptionsItemSelected(item);

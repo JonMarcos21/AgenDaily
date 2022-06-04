@@ -45,13 +45,16 @@ public class Autenticacion extends AppCompatActivity {
         //Inicializamos los componentes
         componentAgendaily = new ComponentAgendaily(this);
 
-
+        textViewWrongPassword = (TextView) findViewById(R.id.textViewWrongPassword);
         textViewEmpty = (TextView) findViewById(R.id.textViewEmpty);
         textViewNoMatch = (TextView) findViewById(R.id.textViewNoMatch);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         editTextPasswordRepeated = (EditText) findViewById(R.id.editTextPasswordRepeated);
+        editTextNewPassword = (EditText) findViewById(R.id.editTextPasswordChange);
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
+        buttonChange = (Button) findViewById(R.id.buttonChange);
+        buttonBack = (Button) findViewById(R.id.buttonBack);
 
         userLogin();
 
@@ -109,7 +112,16 @@ public class Autenticacion extends AppCompatActivity {
         if (SplashScreen.nameActivity.equals("SplashScreen")) {
             buttonLogin.setVisibility(View.VISIBLE);
             editTextPasswordRepeated.setVisibility(View.VISIBLE);
-
+            editTextNewPassword.setVisibility(View.INVISIBLE);
+            buttonChange.setVisibility(View.INVISIBLE);
+            buttonBack.setVisibility(View.INVISIBLE);
+        } else if (SplashScreen.nameActivity.equals("Usuario")) {
+            editTextEmail.setText(user.getEmail());
+            buttonLogin.setVisibility(View.INVISIBLE);
+            editTextPasswordRepeated.setVisibility(View.INVISIBLE);
+            editTextNewPassword.setVisibility(View.VISIBLE);
+            buttonChange.setVisibility(View.VISIBLE);
+            buttonBack.setVisibility(View.VISIBLE);
         }
     }
 
@@ -145,6 +157,34 @@ public class Autenticacion extends AppCompatActivity {
         }
     }
     /**
+     * Actualizamos la contraseña del usuario en la BDD
+     */
+    public void changePassword(View view) {
+        //Comprobamos que ningun de los EditText esté vacío
+        //En caso de que alguno esté mostramos un TextView que pone que "Se deben de completar todos los campos"
+        if (editTextNewPassword.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()) {
+            textViewEmpty.setVisibility(View.VISIBLE);
+            textViewWrongPassword.setVisibility(View.INVISIBLE);
+        } else {
+            textViewEmpty.setVisibility(View.INVISIBLE);
+            //Comprobamos que la contraseña sea la correcta
+            //En caso de que no lo sea mostramos un TexteView que pone "Contraseña incorrecta"
+            if (user.getPassword().equals(passwordConvertHash(editTextPassword))) {
+                textViewWrongPassword.setVisibility(View.INVISIBLE);
+                //Hacemos un update con la nueva contraseña
+                componentAgendaily.updateUser(user.getEmail(), new User(editTextEmail.getText().toString(),
+                        passwordConvertHash(editTextNewPassword)));
+
+                Toast.makeText(this, "Contraseña actualizada", Toast.LENGTH_SHORT).show();
+                goToSettings(new View(this));
+            } else {
+                textViewWrongPassword.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+
+    /**
      * Convierte el contenido del EditText en un Hash tipo SHA-1
      */
     private String passwordConvertHash(EditText editText) {
@@ -178,5 +218,14 @@ public class Autenticacion extends AppCompatActivity {
         startActivity(menu);
         finish();
 
+    }
+
+    /**
+     * Se lanza SettingsActivity
+     */
+    public void goToSettings(View view) {
+        Intent intent = new Intent(Autenticacion.this, Usuario.class);
+        startActivity(intent);
+        finish();
     }
 }

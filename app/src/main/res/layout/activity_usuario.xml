@@ -62,6 +62,7 @@
         android:layout_marginTop="419dp"
         android:layout_marginEnd="-2dp"
         android:background="@drawable/button_rounder"
+        android:onClick="contraseñanueva"
         android:text="@string/log_out" />
 
     <TextView

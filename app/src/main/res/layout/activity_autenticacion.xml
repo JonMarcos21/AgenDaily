@@ -61,8 +61,24 @@
         android:textAlignment="center"
         android:textColor="@color/azul_oscuro"
         android:textColorHint="@color/azul_oscuro"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:visibility="visible" />
 
+
+    <TextView
+        android:id="@+id/textViewWrongPassword"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="681dp"
+        android:layout_marginEnd="79dp"
+        android:text="Contraseña incorrecta"
+        android:textColor="#C1170A"
+        android:textSize="16sp"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/editTextPasswordRepeated"
@@ -83,6 +99,25 @@
         android:textColorHint="@color/azul_oscuro"
         android:textSize="20dp"
         android:visibility="invisible" />
+    <EditText
+        android:id="@+id/editTextPasswordChange"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="442dp"
+        android:layout_marginEnd="80dp"
+        android:drawableLeft="@android:drawable/ic_lock_lock"
+        android:hint="@string/contraseña_nueva"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/azul_oscuro"
+        android:textColorHint="@color/azul_oscuro"
+        android:visibility="invisible"
+        />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -96,10 +131,11 @@
         android:layout_marginEnd="80dp"
         android:background="@drawable/button_rounder"
         android:backgroundTint="@color/azul_claro"
-
+        android:onClick="singIn"
         android:text="@string/iniciar_sesion"
         android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewNoMatch"
@@ -108,9 +144,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="562dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="624dp"
+        android:layout_marginEnd="81dp"
         android:text="Las constraseñas no coinciden"
         android:textColor="#C1170A"
         android:textSize="16sp"
@@ -126,7 +162,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="78dp"
-        android:layout_marginTop="591dp"
+        android:layout_marginTop="657dp"
         android:layout_marginEnd="82dp"
         android:text="@string/campos"
         android:textColor="#C1170A"
@@ -151,7 +187,38 @@
         android:textColor="@color/blanco"
         android:textSize="30dp" />
 
+    <Button
+        android:id="@+id/buttonChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="501dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/button_rounder"
+        android:backgroundTint="@color/azul_claro"
+        android:onClick="changePassword"
+        android:text="@string/cambiar"
+        android:textColor="@color/blanco"
+        android:visibility="invisible" />
 
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="81dp"
+        android:background="@drawable/button_rounder"
+        android:backgroundTint="@color/azul_claro"
+        android:text="@string/volver"
+        android:textColor="#FFFF"
+        android:visibility="invisible" />
 
 
 </RelativeLayout>

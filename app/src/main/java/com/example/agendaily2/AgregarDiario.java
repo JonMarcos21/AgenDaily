@@ -1,8 +1,10 @@
 package com.example.agendaily2;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -101,19 +103,32 @@ public class AgregarDiario extends AppCompatActivity {
         }
 
     }
-    /*
-     *Se crean los botones del menú del ActionBar
-     */
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_edit_text_share, menu);
+        getMenuInflater().inflate(R.menu.menu_agregardiario, menu);
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.item_share:
+            case R.id.item_shareDiario:
                 shareNote();
+                break;
+
+            case R.id.InfoAgregardiario:
+                //se prepara la alerta creando nueva instancia
+                AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+                //seleccionamos la cadena a mostrar
+                alertbox.setMessage(getString(R.string.menu_agregarDiario));
+                //elegimos un positivo SI y creamos un Listener
+                alertbox.setPositiveButton(getString(R.string.Entendido), new DialogInterface.OnClickListener() {
+                    //Funcion llamada cuando se pulsa el boton Si
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                    }
+                });
+                //mostramos el alertbox
+                alertbox.show();
                 break;
         }
         return super.onOptionsItemSelected(item);

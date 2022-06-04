@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/mnPerfil"
-        android:icon="@drawable/login"
-        android:title="@string/perfil"
-        app:showAsAction="ifRoom" />
+    android:id="@+id/item_shareDiario"
+    android:icon="@drawable/ic_share"
+    android:title="Compartir"
+    app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/mnInfo"
+        android:id="@+id/InfoAgregardiario"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="@string/info"
         app:showAsAction="ifRoom" />
-
 </menu>

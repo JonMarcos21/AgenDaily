@@ -12,4 +12,10 @@
     <item
         android:id="@+id/mnPremium"
         android:title="@string/hacerse_premium"/>
+    <item
+        android:id="@+id/volverMenu"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="@string/volver"
+        app:showAsAction="ifRoom"
+        />
 </menu>

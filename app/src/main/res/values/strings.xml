@@ -31,6 +31,16 @@
     <string name="editar_nota">Edit note</string>
     <string name="Ocultar">Ocult note</string>
     <string name="buscar_fecha">Search for date</string>
+    <string name="ayuda_menu">USER HELP: MAIN MENU  In this menu you will find a list of different functions with which you can interact, click on them to access the activity</string>
+    <string name="Entendido">Agreed</string>
+    <string name="ayuda_Diario">USER HELP: DAILY MENU  To start creating your diary, click on the button with the \'+\' sign in the bottom right. Once you create your diaries, they will be placed in the activity. With the search bar you can filter newspapers by words or dates.</string>
+    <string name="menu_notas">USER HELP: ADD JOURNAL MENU  To add your diaries, the current time comes by default along with the day, with which you will only have to fill in the description section. Once you fill it out, click on the button with the \'+\' sign located below and your journal sheet will be created. You have the possibility to share it through the share button located above in the top menu</string>
+    <string name="menu_agregarDiario">USER HELP: MENU ADD NOTE  To add your notes you have to fill in the title and description field. Once you fill it out, click on the button with the \'+\' sign located below and your journal sheet will be created. You have the possibility to share it using the share button located above in the top menu or to add images from your gallery by clicking on the clip located at the top right</string>
+    <string name="cambiar_contraseña">Change Password</string>
+    <string name="cambiar">Change</string>
+    <string name="contraseña_nueva">New Password</string>
+    <string name="menu_AgregarNota">USER HELP: MENU ADD NOTE  To add your notes you have to fill in the title and description field. Once you fill it out, click on the button with the \'+\' sign located below and your journal sheet will be created. You have the possibility to share it using the share button located above in the top menu or to add images from your gallery by clicking on the clip located at the top right</string>
+
     <!-- Strings used for fragments for navigation -->
 
 </resources>

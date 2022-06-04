@@ -1,7 +1,9 @@
 package com.example.agendaily2;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,9 +23,6 @@ public class Menus extends AppCompatActivity  {
 
     }
 
-    /*
-     *Se crea el menu para acceder al usuario o monstrar información en el ActionBar
-     */
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.menu_principal, menu);
         return true;
@@ -34,13 +33,24 @@ public class Menus extends AppCompatActivity  {
                 Intent intent = new Intent(Menus.this, Usuario.class);
                 startActivity(intent);
                 break;
-            case R.id.mnvolver:
-                 finish();
-                break;
             case R.id.mnInfo:
-                break;
+                //se prepara la alerta creando nueva instancia
+                AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+                //seleccionamos la cadena a mostrar
+                alertbox.setMessage(getString(R.string.ayuda_menu));
+                //elegimos un positivo SI y creamos un Listener
+                alertbox.setPositiveButton(getString(R.string.Entendido), new DialogInterface.OnClickListener() {
+                    //Funcion llamada cuando se pulsa el boton Si
+                    public void onClick(DialogInterface arg0, int arg1) {
 
+                    }
+                });
+                //mostramos el alertbox
+                alertbox.show();
+                break;
         }
+
+
         return super.onOptionsItemSelected(item);
     }
 

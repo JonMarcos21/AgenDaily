@@ -32,4 +32,13 @@
     <string name="editar_nota">Editar nota</string>
     <string name="Ocultar">Ocultar nota</string>
     <string name="buscar_fecha">Buscar por fecha</string>
+    <string name="ayuda_menu">AYUDA AL USUARIO: MENU PRINCIPAL  En este menu encontraras una lista de funciones distintas con las que podras interacturar , pulsa encima de ellas para acceder a la actividad</string>
+    <string name="Entendido">Entendido</string>
+    <string name="ayuda_Diario">AYUDA AL USUARIO: MENU DIARIO  Para comenzar a crear tu diario pulsa en el boton con el signo \'+\' que se encuentra en la parte inferior derecha . Una vez crees tus diarios se te ubicaran en la actividad . Con la barra de busqueda podras filtrar diarios mediante palabras o fechas.</string>
+    <string name="menu_notas">AYUDA AL USUARIO: MENU NOTAS  Para comenzar a crear  tus pulsa en el boton con el signo \'+\' que se encuentra en la parte inferior derecha . Una vez crees tus notas se te ubicaran en la actividad . Para poder editar , eliminar u ocultar tus notas pincha sobre una de ellas.</string>
+    <string name="menu_agregarDiario">"AYUDA AL USUARIO: MENU AGREGAR NOTA  Para agregar tus notas tienes que rellenar el campo titulo y descripción. Una vez lo rellenes pulsara en el boton con el signo de '+' ubicado abajo y se te creara tu hoja de diario. Tienes la posibilidad de compartirlo mediante el boton de share ubicado arriba en el menu superior o de añadir imagenes de tu galeria pulsando sobre el clip ubicado arriba a la derecha "</string>
+    <string name="cambiar_contraseña">Cambiar contraseña</string>
+    <string name="cambiar">Cambiar</string>
+    <string name="contraseña_nueva">Contraseña Nueva</string>
+    <string name="menu_AgregarNota">"AYUDA AL USUARIO: MENU AGREGAR NOTA  Para agregar tus notas tienes que rellenar el campo titulo y descripción. Una vez lo rellenes pulsara en el boton con el signo de '+' ubicado abajo y se te creara tu hoja de diario. Tienes la posibilidad de compartirlo mediante el boton de share ubicado arriba en el menu superior o de añadir imagenes de tu galeria pulsando sobre el clip ubicado arriba a la derecha "</string>
 </resources>
