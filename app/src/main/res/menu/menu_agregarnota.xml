@@ -3,19 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-
     <item
-        android:id="@+id/item_share"
-        android:icon="@drawable/ic_share"
-        android:title="Compartir"
-        app:showAsAction="ifRoom" />
-
+        android:id="@+id/volvernota"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="@string/volver"
+        app:showAsAction="ifRoom"
+        />
     <item
         android:id="@+id/item_clip"
         android:icon="@drawable/ic_attach"
         android:title="Añadir imagen"
         app:showAsAction="ifRoom"
         />
+    <item
+        android:id="@+id/item_share"
+        android:icon="@drawable/ic_share"
+        android:title="Compartir"
+        app:showAsAction="ifRoom" />
+
+
     <item
         android:id="@+id/InfoAgregarNOtas"
         android:icon="@android:drawable/ic_menu_info_details"

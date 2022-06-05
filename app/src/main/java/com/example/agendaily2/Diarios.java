@@ -218,7 +218,7 @@ public class Diarios extends AppCompatActivity {
                 } else if (options[i].equals("Eliminar")) {
                     if (componentAgendaily.deleteDiario(diario.getDiarioId()) != 0) {
                         fillListView();
-                        Toast.makeText(Diarios.this, "Nota Eliminada", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Diarios.this, "Diario Eliminada", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

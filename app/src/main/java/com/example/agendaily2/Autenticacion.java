@@ -1,5 +1,6 @@
 package com.example.agendaily2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.PatternsCompat;
 
@@ -14,9 +15,17 @@ import android.widget.Toast;
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 import com.example.agendaily2.hash.Sha;
 import com.example.agendaily2.pojos.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Autenticacion extends AppCompatActivity {
 
@@ -33,6 +42,10 @@ public class Autenticacion extends AppCompatActivity {
     Button inicio;
 
 
+    FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+
+    private String nombre ="";
     private String email ="";               //variables para almcenar los edit text
     private String contraseña ="";
 
@@ -55,6 +68,10 @@ public class Autenticacion extends AppCompatActivity {
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         buttonChange = (Button) findViewById(R.id.buttonChange);
         buttonBack = (Button) findViewById(R.id.buttonBack);
+        //Instanciamos las variables creadas
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         userLogin();
 
@@ -66,12 +83,14 @@ public class Autenticacion extends AppCompatActivity {
 
                 email = editTextEmail.getText().toString();
                 contraseña= editTextPassword.getText().toString();
+                nombre = editTextPasswordRepeated.getText().toString();
 
                 //hacemos un if para que en caso de que los campos esten completos se lanze el metodo registeruser
                 if (!email.isEmpty() && !contraseña.isEmpty()){
 
                     if(contraseña.length()>=6){
                         singIn();
+
 
 
                     }
@@ -102,6 +121,7 @@ public class Autenticacion extends AppCompatActivity {
             }
         }
     }
+
 
 
     /**

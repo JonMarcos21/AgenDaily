@@ -40,8 +40,8 @@ public class AgregarDiario extends AppCompatActivity {
 
 
 
-        getSupportActionBar().setTitle("Editor de Notas");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Editor de diario");
+
 
 
         componentAgendaily = new ComponentAgendaily(this);
@@ -83,7 +83,7 @@ public class AgregarDiario extends AppCompatActivity {
     }
 
     /*
-     *Captura una nota, si se ha mandado desde las notas, y se meten los valores de la nota
+     *Captura un diario, si se ha mandado desde las notas, y se meten los valores de la nota
      * en la pantalla
      */
     private void catchDiario() {
@@ -130,11 +130,15 @@ public class AgregarDiario extends AppCompatActivity {
                 //mostramos el alertbox
                 alertbox.show();
                 break;
+            case R.id.volverdiario:
+                Intent intentvolver = new Intent(AgregarDiario.this, Diarios.class);
+                startActivity(intentvolver);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
     /*
-     *Leemos la fecha  y la descripcion de la nota para mandarla como texto plano a la aplicacion
+     *Leemos la fecha  y la descripcion del diario para mandarla como texto plano a la aplicacion
      * que elija el usuario
      */
     private void shareNote() {

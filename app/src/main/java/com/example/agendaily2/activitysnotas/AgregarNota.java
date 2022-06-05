@@ -22,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.agendaily2.AgregarDiario;
+import com.example.agendaily2.Diarios;
 import com.example.agendaily2.R;
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 import com.example.agendaily2.pojos.Note;
@@ -49,6 +51,7 @@ public class AgregarNota extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_nota);
         getSupportActionBar().setTitle("Editor de Notas");
+
 
 
 
@@ -162,6 +165,10 @@ public class AgregarNota extends AppCompatActivity {
                 });
                 //mostramos el alertbox
                 alertbox.show();
+                break;
+            case R.id.volvernota:
+                Intent intentvolver = new Intent(AgregarNota.this, Notas.class);
+                startActivity(intentvolver);
                 break;
         }
         return super.onOptionsItemSelected(item);

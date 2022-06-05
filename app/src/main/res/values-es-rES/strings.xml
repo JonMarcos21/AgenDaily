@@ -50,4 +50,5 @@
     <string name="Guardar">Guardar</string>
     <string name="crear_recordatorio">Añadir Recordatorio</string>
     <string name="menu_ayudarecordatorio">AYUDA USUARIO RECORDATORIOS: En esta actividad podras insertar un recordatorio añadiendo la hora con el boton de \'elegir hora\'. Una vez tengamos el recordatorio creado le daremos al boton de guardar y nos llevara al menu</string>
+    <string name="buscarPor">Busacr por fecha</string>
 </resources>

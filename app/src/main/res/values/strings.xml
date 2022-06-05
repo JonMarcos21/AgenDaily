@@ -49,6 +49,7 @@
     <string name="Guardar">Save</string>
     <string name="crear_recordatorio">Add Recordatory</string>
     <string name="menu_ayudarecordatorio">HELP USER REMINDERS: In this activity you can insert a reminder by adding the time with the \'choose time\' button. Once we have the reminder created we will give the save button and it will take us to the menu</string>
+    <string name="buscarPor">Search for date</string>
 
     <!-- Strings used for fragments for navigation -->
 
