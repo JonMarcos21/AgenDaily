@@ -1,10 +1,12 @@
 package com.example.agendaily2.calendario;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.agendaily2.activitys.Menus;
 import com.example.agendaily2.R;
+import com.example.agendaily2.activitysnotas.AgregarNota;
+import com.example.agendaily2.activitysnotas.Notas;
 import com.example.agendaily2.adapters.CalendarAdapter;
 import com.google.android.gms.ads.AdView;
 
@@ -170,6 +174,29 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
     {
         if(!dayText.equals(""))
         {
+
+            AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+            //seleccionamos la cadena a mostrar
+            alertbox.setMessage(getString(R.string.opciones));
+
+            //elegimos un positivo SI y creamos un Listener
+            alertbox.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                //Funcion llamada cuando se pulsa el boton Si
+                public void onClick(DialogInterface arg0, int arg1) {
+                    Intent intent = new Intent(Calendario.this, AgregarNota.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+            alertbox.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            //mostramos el alertbox
+            alertbox.show();
+
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
