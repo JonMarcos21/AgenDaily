@@ -59,7 +59,7 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textAlignment="center"
-        android:textColor="@color/azul_oscuro"
+        android:textColor="@color/black"
         android:textColorHint="@color/azul_oscuro"
         android:textSize="20dp"
         android:visibility="visible" />
@@ -95,10 +95,11 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:textAlignment="center"
-        android:textColor="@color/azul_oscuro"
+        android:textColor="@color/black"
         android:textColorHint="@color/azul_oscuro"
         android:textSize="20dp"
         android:visibility="invisible" />
+
     <EditText
         android:id="@+id/editTextPasswordChange"
         android:layout_width="match_parent"
@@ -114,10 +115,9 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:textAlignment="center"
-        android:textColor="@color/azul_oscuro"
+        android:textColor="@color/black"
         android:textColorHint="@color/azul_oscuro"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -216,6 +216,7 @@
         android:layout_marginEnd="81dp"
         android:background="@drawable/button_rounder"
         android:backgroundTint="@color/azul_claro"
+        android:onClick="menu"
         android:text="@string/volver"
         android:textColor="#FFFF"
         android:visibility="invisible" />

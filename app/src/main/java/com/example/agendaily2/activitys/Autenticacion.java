@@ -73,36 +73,7 @@ public class Autenticacion extends AppCompatActivity {
 
         checkActivity();
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                email = editTextEmail.getText().toString();
-                contraseña= editTextPassword.getText().toString();
-                nombre = editTextPasswordRepeated.getText().toString();
-
-                //hacemos un if para que en caso de que los campos esten completos se lanze el metodo registeruser
-                if (!email.isEmpty() && !contraseña.isEmpty()){
-
-                    if(contraseña.length()>=6){
-                        singIn();
-
-
-
-                    }
-                    //un else para que cuando la contraseña no tenga mas de 6 caracteres salte un toast
-                    else{
-                        Toast.makeText(Autenticacion.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
-                    }
-
-
-                }
-                // salta un toast si los campos no estan completos
-                else {
-                    Toast.makeText(Autenticacion.this, "Debe completar los campos ", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     /**
@@ -145,7 +116,7 @@ public class Autenticacion extends AppCompatActivity {
     /**
      * Insertamos un usuario con los datos recogidos de los campos del activity en la BDD
      */
-    public void singIn() {
+    public void singIn(View view) {
 
         //Comprobamos que ningun de los EditText esté vacío
         //En caso de que alguno esté mostramos un TextView que pone que "Se deben de completar todos los campos"
@@ -192,7 +163,7 @@ public class Autenticacion extends AppCompatActivity {
                         passwordConvertHash(editTextNewPassword)));
 
                 Toast.makeText(this, "Contraseña actualizada", Toast.LENGTH_SHORT).show();
-                goToSettings(new View(this));
+                menu(new View(this));
             } else {
                 textViewWrongPassword.setVisibility(View.VISIBLE);
             }
@@ -239,7 +210,7 @@ public class Autenticacion extends AppCompatActivity {
     /**
      * Se lanza SettingsActivity
      */
-    public void goToSettings(View view) {
+    public void menu(View view) {
         Intent intent = new Intent(Autenticacion.this, Usuario.class);
         startActivity(intent);
         finish();

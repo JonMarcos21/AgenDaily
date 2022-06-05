@@ -4,11 +4,8 @@
 
 
     <item
-        android:id="@+id/mnBorrarCuenta"
-        android:title="@string/borrar_cuenta" />
-    <item
-        android:id="@+id/mnLogOut"
-        android:title="@string/log_out"/>
+        android:id="@+id/mnCambiar"
+        android:title="@string/cambiar_contraseña" />
     <item
         android:id="@+id/mnPremium"
         android:title="@string/hacerse_premium"/>

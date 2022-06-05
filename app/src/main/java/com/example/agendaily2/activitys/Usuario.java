@@ -1,7 +1,9 @@
 package com.example.agendaily2.activitys;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -35,6 +37,7 @@ public class Usuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
 
+        SplashScreen.nameActivity = "Usuario";
 
         email = (TextView) findViewById(R.id.txtCorreoUsuario);
         //Instancia Firebase Auth
@@ -56,7 +59,24 @@ public class Usuario extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.mnBorrarCuenta:
+            case R.id.mnCambiar:
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Quiere cambiar la contraseña?")
+                        .setPositiveButton("Cambiar", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent = new Intent(Usuario.this, Autenticacion.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                builder.show();
+
                 break;
 
             case R.id.mnPremium:
