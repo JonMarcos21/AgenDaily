@@ -31,37 +31,37 @@
             android:name=".activitysnotas.AgregarNota"
             android:exported="true" />
         <activity
-            android:name=".AgregarDiario"
+            android:name=".diario.AgregarDiario"
             android:exported="true" />
         <activity
-            android:name=".Usuario"
+            android:name=".activitys.Usuario"
             android:exported="true" />
         <activity
-            android:name=".Calendario"
+            android:name=".calendario.Calendario"
             android:exported="true" />
         <activity
             android:name=".activitysnotas.Notas"
             android:exported="true" />
         <activity
-            android:name=".Avisos"
+            android:name=".avisos.Avisos"
             android:exported="true" />
         <activity
-            android:name=".Diarios"
+            android:name=".diario.Diarios"
             android:exported="true" />
         <activity
             android:name=".ContrasenaOlvidada"
             android:exported="true" />
         <activity
-            android:name=".Menus"
+            android:name=".activitys.Menus"
             android:exported="true" />
         <activity
             android:name=".Formulario"
             android:exported="true" />
         <activity
-            android:name=".Autenticacion"
+            android:name=".activitys.Autenticacion"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activitys.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,11 +71,11 @@
         </activity>
 
         <receiver
-            android:name="com.example.agendaily2.AlarmReceiver"
+            android:name="com.example.agendaily2.avisos.AlarmReceiver"
             android:enabled="true" />
 
         <service
-            android:name="com.example.agendaily2.NotificationService"
+            android:name="com.example.agendaily2.avisos.NotificationService"
             android:enabled="true" />
     </application>
 

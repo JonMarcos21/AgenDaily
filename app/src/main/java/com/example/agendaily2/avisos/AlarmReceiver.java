@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.avisos;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

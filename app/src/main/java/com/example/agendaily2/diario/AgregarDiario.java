@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.diario;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.agendaily2.activitysnotas.AgregarNota;
-import com.example.agendaily2.activitysnotas.Notas;
+import com.example.agendaily2.R;
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 import com.example.agendaily2.pojos.Diario;
-import com.example.agendaily2.pojos.Note;
 import com.example.agendaily2.pojos.User;
 
 import java.text.SimpleDateFormat;

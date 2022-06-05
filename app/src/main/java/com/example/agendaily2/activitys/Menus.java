@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.activitys;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.agendaily2.R;
 import com.example.agendaily2.activitysnotas.Notas;
 
 //imports para anuncios admob
 
+import com.example.agendaily2.avisos.Avisos;
+import com.example.agendaily2.calendario.Calendario;
+import com.example.agendaily2.diario.Diarios;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;

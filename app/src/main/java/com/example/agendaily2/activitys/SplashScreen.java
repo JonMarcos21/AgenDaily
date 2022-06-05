@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.example.agendaily2.R;
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 
 public class SplashScreen extends AppCompatActivity {

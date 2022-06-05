@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.agendaily2.Menus;
+import com.example.agendaily2.activitys.Menus;
 import com.example.agendaily2.R;
 import com.example.agendaily2.adapters.NotesListAdapter;
 import com.example.agendaily2.componentBD.ComponentAgendaily;

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.agendaily2.CalendarViewHolder;
+import com.example.agendaily2.calendario.CalendarViewHolder;
 import com.example.agendaily2.R;
 
 import java.util.ArrayList;

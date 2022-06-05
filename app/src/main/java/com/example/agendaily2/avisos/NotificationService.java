@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.avisos;
 
 import android.annotation.TargetApi;
 import android.app.IntentService;
@@ -16,6 +16,9 @@ import android.os.Build;
 import android.widget.EditText;
 
 import androidx.core.app.NotificationCompat;
+
+import com.example.agendaily2.activitys.Menus;
+import com.example.agendaily2.R;
 
 public class NotificationService extends IntentService {
 

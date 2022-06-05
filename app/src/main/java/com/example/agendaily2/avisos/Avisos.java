@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.avisos;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +20,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.agendaily2.activitysnotas.Notas;
+import com.example.agendaily2.activitys.Menus;
+import com.example.agendaily2.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -146,7 +147,7 @@ public class Avisos extends AppCompatActivity {
         //Le pasamos un identificador para la alarma y el contexto para que pueda llamar a la clase alarm manager
         private static void setAlarm(int i ,long timestamp,Context ctx){
             AlarmManager alarmManager = (AlarmManager) ctx.getSystemService(ALARM_SERVICE);
-            Intent alarmIntent = new Intent(ctx,AlarmReceiver.class);
+            Intent alarmIntent = new Intent(ctx, AlarmReceiver.class);
             PendingIntent pendingIntent;
             pendingIntent = PendingIntent.getBroadcast(ctx,i,alarmIntent,PendingIntent.FLAG_ONE_SHOT);
             alarmIntent.setData((Uri.parse("custom://" + System.currentTimeMillis())) );

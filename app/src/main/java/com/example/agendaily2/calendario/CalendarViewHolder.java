@@ -1,4 +1,4 @@
-package com.example.agendaily2;
+package com.example.agendaily2.calendario;
 
 import android.view.View;
 import android.widget.TextView;
@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.agendaily2.R;
 import com.example.agendaily2.adapters.CalendarAdapter;
 
 public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener

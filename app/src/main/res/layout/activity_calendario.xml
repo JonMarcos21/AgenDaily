@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/gris"
-    tools:context=".Calendario">
+    tools:context=".calendario.Calendario">
 
 
     <LinearLayout
