@@ -124,10 +124,22 @@
     </LinearLayout>
 
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="486dp" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111">
+
+    </com.google.android.gms.ads.AdView>
 
     <ImageView
         android:id="@+id/btnflechacalendario"
@@ -140,6 +152,10 @@
         app:srcCompat="@drawable/flechabaja"
         tools:ignore="SpeakableTextPresentCheck"
         android:visibility="invisible"/>
+
+
+
+
 
 
 </LinearLayout>

@@ -17,15 +17,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.agendaily2.activitysnotas.AgregarNota;
-import com.example.agendaily2.activitysnotas.Notas;
+
 import com.example.agendaily2.adapters.DiarioListAdapter;
-import com.example.agendaily2.adapters.NotesListAdapter;
+
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 import com.example.agendaily2.hash.Sha;
 import com.example.agendaily2.pojos.Diario;
-import com.example.agendaily2.pojos.Note;
+
 import com.example.agendaily2.pojos.User;
+import com.google.android.gms.ads.AdView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -38,6 +45,8 @@ public class Diarios extends AppCompatActivity {
     private ComponentAgendaily componentAgendaily;          //Objeto que nos permite realizar las operaciones con la BDD
     private ArrayList<Diario> listDiarios;              //ArrayList que contendrá todas las notas de la BDD
 
+    private AdView mAdView;
+
 
     private final String SHA = "SHA-1";             //Constante que guarda el tipo de hash
     public static boolean isPermission;             //Variable que controla los permisos
@@ -46,6 +55,24 @@ public class Diarios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diario);
+
+
+        //Implementación de anuncios AdMob
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdView adView = new AdView(this);
+
+        adView.setAdSize(AdSize.BANNER);
+
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
 
