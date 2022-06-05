@@ -138,7 +138,8 @@
         android:foregroundGravity="left"
         android:onClick="atrasCalendario"
         app:srcCompat="@drawable/flechabaja"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:visibility="invisible"/>
 
 
 </LinearLayout>

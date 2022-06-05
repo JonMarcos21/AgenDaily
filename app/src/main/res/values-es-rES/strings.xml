@@ -41,4 +41,13 @@
     <string name="cambiar">Cambiar</string>
     <string name="contraseña_nueva">Contraseña Nueva</string>
     <string name="menu_AgregarNota">"AYUDA AL USUARIO: MENU AGREGAR NOTA  Para agregar tus notas tienes que rellenar el campo titulo y descripción. Una vez lo rellenes pulsara en el boton con el signo de '+' ubicado abajo y se te creara tu hoja de diario. Tienes la posibilidad de compartirlo mediante el boton de share ubicado arriba en el menu superior o de añadir imagenes de tu galeria pulsando sobre el clip ubicado arriba a la derecha "</string>
+    <string name="elegir_hora">Elige la hora</string>
+    <string name="hora">Hora:</string>
+    <string name="titulo">Titulo</string>
+    <string name="changed_to">Notificación cambiada a las %s</string>
+    <string name="select_time">Selecciona la hora</string>
+    <string name="new_notificacion">Nueva notificación</string>
+    <string name="Guardar">Guardar</string>
+    <string name="crear_recordatorio">Añadir Recordatorio</string>
+    <string name="menu_ayudarecordatorio">AYUDA USUARIO RECORDATORIOS: En esta actividad podras insertar un recordatorio añadiendo la hora con el boton de \'elegir hora\'. Una vez tengamos el recordatorio creado le daremos al boton de guardar y nos llevara al menu</string>
 </resources>
