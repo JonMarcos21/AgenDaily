@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Seguridad">
+
+        <PreferenceScreen
+            android:key="pref_backup"
+            android:summary="@string/sync_pref_summary"
+            android:title="@string/sync_pref" />
+
+        <PreferenceScreen
+            android:key="pref_reset"
+            android:summary="Se restablecerán las notas de la última copia de seguridad"
+            android:title="Restablecer Datos" />
+
+        <PreferenceScreen
+            android:key="pref_change_password"
+            android:summary="Se restablecerá la contraseña de la cuenta"
+            android:title="Cambiar Contraseña"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
