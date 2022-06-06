@@ -65,7 +65,7 @@ public class AgregarDiario extends AppCompatActivity {
                             public void run() {
                                 EditText tdate = (EditText) findViewById(R.id.editTextFechaDiario);
                                 long date = System.currentTimeMillis();
-                                SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy");
+                                SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy HH:mm ");
                                 String dateString = sdf.format(date);
                                 tdate.setText(dateString);
                             }

@@ -57,6 +57,7 @@ public class Notas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notas);
+        getSupportActionBar().setTitle("Notas");
 
         //Implementación de anuncios AdMob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {

@@ -49,6 +49,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
+        getSupportActionBar().setTitle("Calendario");
 
         //Implementación de anuncios AdMob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -138,7 +139,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
         //creamos un for que recorra los dias de la semana
-        for(int i = 1; i <= 42; i++)
+        for(int i = 2; i <= 42; i++)
         {
             if(i <= dayOfWeek || i > daysInMonth + dayOfWeek)
             {

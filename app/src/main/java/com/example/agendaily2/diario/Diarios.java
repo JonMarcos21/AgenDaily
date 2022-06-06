@@ -57,6 +57,7 @@ public class Diarios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diario);
+        getSupportActionBar().setTitle("Diario");
 
 
         //Implementación de anuncios AdMob

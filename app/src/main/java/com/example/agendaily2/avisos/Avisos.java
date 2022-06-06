@@ -46,6 +46,7 @@ public class Avisos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avisos);
+        getSupportActionBar().setTitle("Avisos");
 
         //Implementación de anuncios AdMob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
