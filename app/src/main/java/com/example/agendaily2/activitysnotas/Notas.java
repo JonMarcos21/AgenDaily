@@ -41,6 +41,7 @@ public class Notas extends AppCompatActivity {
     //Objetos de la interfaz
     private ListView listViewNotes;
 
+    //Objeto para agregar anuncios
     private AdView mAdView;
 
     private ComponentAgendaily componentAgendaily;          //Objeto que nos permite realizar las operaciones con la BDD
@@ -49,7 +50,7 @@ public class Notas extends AppCompatActivity {
 
     private final String SHA = "SHA-1";             //Constante que guarda el tipo de hash
     public static boolean isPermission;             //Variable que controla los permisos
-    public static boolean isUpdate;                 //Variable que controla si hacemos un update o insert en el EditTextActivity
+    public static boolean isUpdate;                 //Variable que controla si hacemos un update o insert en el AgregarNota
 
 
     @Override
@@ -64,6 +65,8 @@ public class Notas extends AppCompatActivity {
             }
         });
 
+        //Agregamos anuncios a la página
+
         AdView adView = new AdView(this);
 
         adView.setAdSize(AdSize.BANNER);
@@ -76,11 +79,13 @@ public class Notas extends AppCompatActivity {
 
         isUpdate = false;
 
+        //Llamamos a la base de datos y al item list view que sera donde se guarden los datos
         componentAgendaily = new ComponentAgendaily(this);
         listViewNotes = (ListView) findViewById(R.id.listViewNotes);
 
         fillListView();
 
+        //Cuando se selecciona un item del ListView mostramos una ventana de dialogo
         listViewNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -98,7 +103,7 @@ public class Notas extends AppCompatActivity {
     }
 
     /**
-     * Pedimos los permisos al usuario
+     * Pedimos los permisos al usuario para acceder a la galeria del teléfono
      */
     private boolean validatePermissions() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
@@ -148,7 +153,7 @@ public class Notas extends AppCompatActivity {
 
 
     /*
-     *Se crea el boton  en el ActionBar
+     *Se crea el menu  en el ActionBar
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_ayuda, menu);
@@ -157,16 +162,18 @@ public class Notas extends AppCompatActivity {
 
 
     /*
-     *Comprobamos si han seleccionado el boton de Ajuste y llamamos a SettingsActivity
+     *Añadimos los items del menu
      */
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
+            //item para vover al menu principal
             case R.id.volver:
                 Intent intentvolver = new Intent(Notas.this, Menus.class);
                 startActivity(intentvolver);
                 break;
 
+            //Item para monstar informacion
             case R.id.infoboton:
                 //se prepara la alerta creando nueva instancia
                 AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
@@ -208,6 +215,7 @@ public class Notas extends AppCompatActivity {
         alertDialogBuilder.setTitle("Seleccione una opción");
         alertDialogBuilder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
+            //Compramos cual opción selecciona el usuario y asignamos diferentes funciones para cada if
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (options[i].equals("Ver o Modificar")) {
                     isUpdate = true;
@@ -218,6 +226,7 @@ public class Notas extends AppCompatActivity {
                     Intent intent = new Intent(Notas.this, AgregarNota.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
+                    //ocultamos el contenido de la nota
                 } else if (options[i].equals("Ocultar contenido")) {
                     Note noteUpdate = componentAgendaily.readNote(note.getNoteId());
                     noteUpdate.setEncode(1);
@@ -240,6 +249,7 @@ public class Notas extends AppCompatActivity {
                 }
             }
         });
+        //Monstamos el alert builder
         alertDialogBuilder.show();
     }
 
@@ -296,7 +306,7 @@ public class Notas extends AppCompatActivity {
     }
 
     /*
-     *Llamamos a EditTextActivity
+     *Llamamos a AgregarNota
      */
     public void addNote(View view) {
         Intent intent = new Intent(Notas.this, AgregarNota.class);

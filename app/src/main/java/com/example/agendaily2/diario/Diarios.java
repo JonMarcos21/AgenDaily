@@ -40,8 +40,9 @@ import java.util.Iterator;
 
 public class Diarios extends AppCompatActivity {
 
-    private ListView listViewDiario;
-    private EditText editTextSearch;
+
+    private ListView listViewDiario;        //Creamos un objeto list view para conectarnos al list view del layout donde se almacenan los elementos
+    private EditText editTextSearch;        //Creamos un edit text para crear la busqueda
 
     private ComponentAgendaily componentAgendaily;          //Objeto que nos permite realizar las operaciones con la BDD
     private ArrayList<Diario> listDiarios;              //ArrayList que contendrá todas las notas de la BDD
@@ -76,7 +77,7 @@ public class Diarios extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
 
-
+        // iniciamos las variables creadas
         isUpdate = false;
 
         componentAgendaily = new ComponentAgendaily(this);
@@ -97,6 +98,7 @@ public class Diarios extends AppCompatActivity {
         });
 
 
+        //Cuando se selecciona un item del ListView mostramos una ventana de dialogo
         listViewDiario.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -146,7 +148,7 @@ public class Diarios extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     /**
-     * Buscamos una nota por su titulo a partir del String que ingrese el usuario en el editTextSearch
+     * Buscamos un diario por su fecha a partir del String que ingrese el usuario en el editTextSearch
      */
     private void performSearch() {
         if (listDiarios != null) {
@@ -171,7 +173,7 @@ public class Diarios extends AppCompatActivity {
         }
     }
     /*
-     *Según el atributo Encode de Note mostramos el la ventana con las opciones de la nota o pedimos la contraseña
+     *Según el atributo Encode de Diario mostramos el la ventana con las opciones de la nota o pedimos la contraseña
      */
     private void showAlertDialog(final Diario diario) {
         switch (diario.getEncode()) {
@@ -185,7 +187,7 @@ public class Diarios extends AppCompatActivity {
         }
     }
     /*
-     *Ventana de dialogo con las opciones de las notas
+     *Ventana de dialogo con las opciones del diario
      */
     private void defaultAlertDialog(final Diario diario, final CharSequence[] options) {
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -258,7 +260,7 @@ public class Diarios extends AppCompatActivity {
         alertDialog.show();
     }
     /*
-     *Consultamos todas las notas de la BDD y las añadimos al listViewNotes
+     *Consultamos todas los diarios de la BDD y las añadimos al listViewNotes
      */
     private void fillListView() {
         listDiarios = componentAgendaily.readDiarios();
@@ -271,7 +273,7 @@ public class Diarios extends AppCompatActivity {
         }
     }
     /*
-     *Añadimos las notas que contenga el ArrayList al listViewNotes
+     *Añadimos los diarios que contenga el ArrayList al listViewDiarios
      */
     private void fillListView(ArrayList<Diario> diarios) {
         DiarioListAdapter diarioListAdapter = new DiarioListAdapter(this,
@@ -280,7 +282,7 @@ public class Diarios extends AppCompatActivity {
     }
 
     /*
-     *Llamamos a EditTextActivity
+     *Llamamos a AgregarDiario
      */
     public void addDiario(View view) {
         Intent intent = new Intent(Diarios.this, AgregarDiario.class);

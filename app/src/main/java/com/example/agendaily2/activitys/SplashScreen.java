@@ -13,6 +13,7 @@ import com.example.agendaily2.componentBD.ComponentAgendaily;
 
 public class SplashScreen extends AppCompatActivity {
 
+    //Establecemos duracion y nombre de la activity para el splashScreen
     private static int SPLASH_TIME_OUT = 2000;
     public static String nameActivity = "SplashScreen";
 

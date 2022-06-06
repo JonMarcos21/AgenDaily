@@ -7,12 +7,14 @@ import java.io.Serializable;
 
 public class Diario implements Serializable {
 
+    //variables
     private Integer diarioId;
     private String fecha;
     private String description;
     private Integer encode;
     private User userId;
 
+    //Constructores
     public Diario() {
     }
 
@@ -23,6 +25,8 @@ public class Diario implements Serializable {
         this.encode = encode;
         this.userId = userId;
     }
+
+    //getters and setters
 
     public Integer getDiarioId() {
         return diarioId;

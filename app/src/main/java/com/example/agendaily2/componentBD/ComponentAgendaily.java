@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.agendaily2.pojos.Diario;
 import com.example.agendaily2.pojos.Note;
-import com.example.agendaily2.pojos.Recordatorio;
 import com.example.agendaily2.pojos.User;
 
 import java.util.ArrayList;
@@ -292,89 +291,6 @@ public class ComponentAgendaily {
         return listDiario;
     }
 
-    /*
-     *Insertamos un diario en la BDD
-     */
-    public long insertRecordatorio(Recordatorio recordatorio) {
-        openForWrite();
-        long registers = 0;
-        ContentValues content = new ContentValues();
-        content.put("TITLE", recordatorio.getTitle());
-        content.put("DESCRIPTION", recordatorio.getDescription());
-        content.put("DESCRIPTION", recordatorio.getHora());
-        content.put("USER_ID", recordatorio.getUserId().getUserId());
-        registers = agendas.insert("RECORDATORIO", null, content);
-        close();
-        return registers;
-    }
-    /*
-     *Eliminamos un diario de la BDD por el id
-     */
-    public long deleteRecordatorio(Integer recordatorioId) {
-        openForWrite();
-        long registers = 0;
-        registers = agendas.delete("RECORDATORIO", "RECORDATORIO_ID = " + recordatorioId, null);
-        close();
-        return registers;
-    }
 
-    /*
-     *Actualizamos un diario de la BDD según el id
-     */
-    public long updateRecordatorio(Integer recordatorioId, Recordatorio recordatorio) {
-        openForWrite();
-        long registers = 0;
-        ContentValues content = new ContentValues();
-        content.put("TITLE", recordatorio.getTitle());
-        content.put("DESCRIPTION", recordatorio.getDescription());
-        content.put("DESCRIPTION", recordatorio.getHora());
-        content.put("USER_ID", recordatorio.getUserId().getUserId());
-        registers = agendas.update("RECORDATORIO", content, "RECORDATORIO_ID = " + recordatorioId, null);
-        close();
-        return registers;
-    }
-
-    /*
-     *Leemos un diario de la BDD por el id
-     */
-    public Recordatorio readRecordatorio(Integer recordatorioId) {
-        openForWrite();
-        Cursor cursor = agendas.rawQuery("select DIARIO_ID, TITLE, DESCRIPTION,HORA, USER_ID" +
-                " from RECORDATORIO where RECORDATORIO_ID = " + recordatorioId, new String[]{});
-        if (cursor.getCount() == 0) {
-            cursor.close();
-            close();
-            return null;
-        }
-        Recordatorio rrecordatorio = null;
-        if (cursor.moveToFirst()) {
-            rrecordatorio = new Recordatorio(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
-                    cursor.getInt(3), new User(cursor.getInt(4)));
-        }
-        cursor.close();
-        close();
-        return rrecordatorio;
-    }
-
-    /*
-     *Leemos todas las diarios de la BDD
-     */
-    public ArrayList<Recordatorio> readRecordatorios() {
-        openForWrite();
-        Cursor cursor = agendas.rawQuery("select RECORDATORIO_ID, TITLE, DESCRIPTION,FECHA, USER_ID from RECORDATORIO", null);
-        if (cursor.getCount() == 0) {
-            cursor.close();
-            close();
-            return null;
-        }
-        ArrayList<Recordatorio> listRecordatorio= new ArrayList<>();
-        while (cursor.moveToNext()) {
-            listRecordatorio.add(new Recordatorio(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
-                    cursor.getInt(3),readUser(cursor.getInt(4))));
-        }
-        cursor.close();
-        close();
-        return listRecordatorio;
-    }
 }
 

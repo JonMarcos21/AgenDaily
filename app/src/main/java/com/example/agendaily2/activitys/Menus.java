@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.agendaily2.R;
 import com.example.agendaily2.activitysnotas.Notas;
@@ -27,6 +28,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 public class Menus extends AppCompatActivity  {
 
+    //creamos un adview para monstar los anuncios
     private AdView mAdView;
 
     @Override
@@ -34,6 +36,8 @@ public class Menus extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        //le damos un nombre a la activity
+        SplashScreen.nameActivity = "Usuario";
         //Implementación de anuncios AdMob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -41,6 +45,7 @@ public class Menus extends AppCompatActivity  {
             }
         });
 
+        //Creación de los anuncios
         AdView adView = new AdView(this);
 
         adView.setAdSize(AdSize.BANNER);
@@ -53,16 +58,16 @@ public class Menus extends AppCompatActivity  {
 
     }
 
+    //creamos un menu superior
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.menu_principal, menu);
         return true;
     }
+    //Hacemos un llamamiento a los items del menu
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.mnPerfil:
-                Intent intent = new Intent(Menus.this, Usuario.class);
-                startActivity(intent);
-                break;
+
+            //Opcion de información
             case R.id.mnInfo:
                 //se prepara la alerta creando nueva instancia
                 AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
@@ -78,6 +83,34 @@ public class Menus extends AppCompatActivity  {
                 //mostramos el alertbox
                 alertbox.show();
                 break;
+
+                //Opción  de cambiar contraseña y ver perfil
+            case R.id.mCambiar:
+
+                //Monstramos un dialogo para cambiar la contraseña y ver el perfil
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Quiere cambiar la contraseña y ver el usuario?")
+                        .setPositiveButton("Cambiar", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent = new Intent(Menus.this, Autenticacion.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                builder.show();
+
+                break;
+
+                //Opcion con la función de premium
+            case R.id.mnPremium:
+                Toast.makeText(this, "No disponible en estos momentos", Toast.LENGTH_SHORT).show();
+                break;
+
         }
 
 
@@ -86,6 +119,9 @@ public class Menus extends AppCompatActivity  {
 
 
 
+    //creacion de intent para ir a las activitys
+
+    //intent para activity diario
     public void diario(View view){
 
         Intent diario = new Intent(this, Diarios.class);
@@ -93,6 +129,7 @@ public class Menus extends AppCompatActivity  {
         finish();
 
     }
+    //intent para activity notas
     public void notas(View view){
 
         Intent notas = new Intent(this, Notas.class);
@@ -100,6 +137,7 @@ public class Menus extends AppCompatActivity  {
         finish();
 
     }
+    //intent para activity avisos
     public void avisos(View view){
 
         Intent avisos = new Intent(this, Avisos.class);
@@ -107,6 +145,7 @@ public class Menus extends AppCompatActivity  {
         finish();
 
     }
+    //intent para activity calendario
     public void calendario(View view){
 
         Intent calendario = new Intent(this, Calendario.class);
@@ -114,13 +153,7 @@ public class Menus extends AppCompatActivity  {
         finish();
 
     }
-    public void atrasabajo(View view){
 
-        Intent atras = new Intent(this, Autenticacion.class);
-        startActivity(atras);
-        finish();
-
-    }
 
 
 }

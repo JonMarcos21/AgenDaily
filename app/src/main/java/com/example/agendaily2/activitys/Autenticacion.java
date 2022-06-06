@@ -10,15 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.agendaily2.ContrasenaOlvidada;
-import com.example.agendaily2.Formulario;
 import com.example.agendaily2.R;
 import com.example.agendaily2.componentBD.ComponentAgendaily;
 import com.example.agendaily2.hash.Sha;
 import com.example.agendaily2.pojos.User;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,24 +21,20 @@ import java.util.Iterator;
 public class Autenticacion extends AppCompatActivity {
 
     // creacion de variables para añadir datos
-    private TextView textViewWrongPassword, textViewNoMatch, textViewEmpty, editTextEmail;
-    private EditText editTextPassword, editTextPasswordRepeated, editTextNewPassword;
+    private TextView textViewWrongPassword, textViewNoMatch, textViewEmpty,registrarse;
+    private EditText editTextPassword, editTextPasswordRepeated, editTextNewPassword,editTextEmail,cadena;
     private Button buttonLogin, buttonChange, buttonBack;
 
+//llamamiento a la base de datos y al pojo user
 
-    private User user;                          //Creamos un POJO de apoyo
-    private ComponentAgendaily componentAgendaily;      //Objeto que nos permite realizar las operaciones con la BDD
+    private User user;
+    private ComponentAgendaily componentAgendaily;
 
     private final String SHA = "SHA-1";         //Constante que guarda el tipo de hash
-    Button inicio;
 
 
-    FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
 
-    private String nombre ="";
-    private String email ="";               //variables para almcenar los edit text
-    private String contraseña ="";
+
 
 
     @Override
@@ -64,11 +55,10 @@ public class Autenticacion extends AppCompatActivity {
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         buttonChange = (Button) findViewById(R.id.buttonChange);
         buttonBack = (Button) findViewById(R.id.buttonBack);
-        //Instanciamos las variables creadas
-        mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        registrarse = (TextView)findViewById(R.id.Registrarse);
 
 
+        //hacemos la llamada de los métodos creados
         userLogin();
 
         checkActivity();
@@ -94,6 +84,7 @@ public class Autenticacion extends AppCompatActivity {
     /**
      * Comprobamos si el usuario viene del SplashActivity o del SettingsActivity
      * Dependiendo de que pantalla venga mostramos unos botones u otros
+     * el visible pondra los valores a la vista y el invisible los ocultara
      */
     private void checkActivity() {
         if (SplashScreen.nameActivity.equals("SplashScreen")) {
@@ -109,6 +100,7 @@ public class Autenticacion extends AppCompatActivity {
             editTextNewPassword.setVisibility(View.VISIBLE);
             buttonChange.setVisibility(View.VISIBLE);
             buttonBack.setVisibility(View.VISIBLE);
+            registrarse.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -118,8 +110,10 @@ public class Autenticacion extends AppCompatActivity {
      */
     public void singIn(View view) {
 
+
+
         //Comprobamos que ningun de los EditText esté vacío
-        //En caso de que alguno esté mostramos un TextView que pone que "Se deben de completar todos los campos"
+        //En caso de que alguno no esté mostramos un Toast que pone que "Se deben de completar todos los campos"
         if (editTextEmail.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty() ||
                 editTextPasswordRepeated.getText().toString().isEmpty()) {
             textViewEmpty.setVisibility(View.VISIBLE);
@@ -127,13 +121,14 @@ public class Autenticacion extends AppCompatActivity {
         } else {
             textViewEmpty.setVisibility(View.INVISIBLE);
             //Comprobamos que las contraseñas coinciden
-            //En caso de que no coincidan mostramos un TextView que pone "Las constraseñas no coinciden"
+            //En caso de que no coincidan mostramos un Toast que diga "Las constraseñas no coinciden"
             if (editTextPassword.getText().toString().equals(editTextPasswordRepeated.getText().toString())) {
                 textViewNoMatch.setVisibility(View.INVISIBLE);
-                //Leemos los datos de la interfaz, hacemos un insert en la BDD y lanzamos MainActivity
+                //Leemos los datos de la interfaz, hacemos un insert en la BDD y lanzamos al menu
                 User user = new User(editTextEmail.getText().toString(), passwordConvertHash(editTextPassword));
 
                 if (componentAgendaily.insertUser(user) != 0) {
+
                     goTOMenu();
                 } else {
                     Toast.makeText(this, "Fallo al registrar usuario", Toast.LENGTH_SHORT).show();
@@ -150,7 +145,7 @@ public class Autenticacion extends AppCompatActivity {
         //Comprobamos que ningun de los EditText esté vacío
         //En caso de que alguno esté mostramos un TextView que pone que "Se deben de completar todos los campos"
         if (editTextNewPassword.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()) {
-            textViewEmpty.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Se deben completar los campos", Toast.LENGTH_SHORT).show();
             textViewWrongPassword.setVisibility(View.INVISIBLE);
         } else {
             textViewEmpty.setVisibility(View.INVISIBLE);
@@ -165,7 +160,7 @@ public class Autenticacion extends AppCompatActivity {
                 Toast.makeText(this, "Contraseña actualizada", Toast.LENGTH_SHORT).show();
                 menu(new View(this));
             } else {
-                textViewWrongPassword.setVisibility(View.VISIBLE);
+                Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -179,27 +174,11 @@ public class Autenticacion extends AppCompatActivity {
     }
 
 
-    //boton para acceder al formulario
-
-    public void formulario(View view){
-
-        Intent invitado = new Intent(this, Formulario.class);
-        startActivity(invitado);
-        finish();
-
-    }
-
-    //boton para acceder al reseteo de la contraseña
-
-    public void contrasena(View view){
-
-        Intent contrasena = new Intent(this, ContrasenaOlvidada.class);
-        startActivity(contrasena);
-        finish();
-
-    }
+   // Intents wque nos llevan a la activity menus
 
     public void goTOMenu(){
+
+
 
         Intent menu = new Intent(this, Menus.class);
         startActivity(menu);
@@ -211,7 +190,7 @@ public class Autenticacion extends AppCompatActivity {
      * Se lanza SettingsActivity
      */
     public void menu(View view) {
-        Intent intent = new Intent(Autenticacion.this, Usuario.class);
+        Intent intent = new Intent(Autenticacion.this, Menus.class);
         startActivity(intent);
         finish();
     }

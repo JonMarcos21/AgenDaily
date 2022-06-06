@@ -27,7 +27,7 @@ public class DiarioListAdapter extends ArrayAdapter<Diario> {
     }
 
     /**
-     * Método en el que se obtiene un Objeto de la clase Note, se leen sus atributos y se añaden a la
+     * Método en el que se obtiene un Objeto de la clase Diario, se leen sus atributos y se añaden a la
      * vista del ListView
      */
     @Override
@@ -46,7 +46,7 @@ public class DiarioListAdapter extends ArrayAdapter<Diario> {
         TextView textViewFechaDiario = (TextView) v.findViewById(R.id.textViewFechaDiario);
         TextView textViewDescriptionDiario = (TextView) v.findViewById(R.id.textViewDescriptionDiario);
 
-        //Dependiendo del valor de encode mostramos la descripcion de la nota
+        //Dependiendo del valor de encode mostramos la descripcion del diario
         switch (diario.getEncode()) {
             case 0:
                 textViewIdDiario.setText(diario.getDiarioId().toString());

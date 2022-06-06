@@ -5,6 +5,7 @@ import java.io.Serializable;
 //Clase Pojo de la tabla Note de la bdd
 public class Note implements Serializable {
 
+    //variables
     private Integer noteId;
     private String title;
     private String description;
@@ -12,6 +13,7 @@ public class Note implements Serializable {
     private Integer encode;
     private User userId;
 
+    //constructores
     public Note() {
     }
 
@@ -32,6 +34,7 @@ public class Note implements Serializable {
         this.userId = userId;
     }
 
+    //getters and setter
     public Integer getNoteId() {
         return noteId;
     }

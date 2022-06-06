@@ -11,11 +11,12 @@ import androidx.core.content.ContextCompat;
 public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
+    //Método para pasar un tsg y un mrndsjr de la alarma
     public void onReceive(Context context, Intent intent) {
         Intent service1 = new Intent(context, NotificationService.class);
         service1.setData((Uri.parse("custom://" + System.currentTimeMillis())));
         ContextCompat.startForegroundService(context, service1 );
-        Log.d("WALKIRIA", " ALARM RECEIVED!!!");
+        Log.d("AGENDAILY", " ALARM RECEIVED!!!");
 
     }
 }

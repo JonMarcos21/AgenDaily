@@ -2,13 +2,15 @@ package com.example.agendaily2.pojos;
 
 import java.io.Serializable;
 
-//Clase Pojo de la tabla Diario de la bdd
+//Clase Pojo de la tabla User  de la bdd
 public class User implements Serializable {
 
+    //variables
     private Integer userId;
     private String email;
     private String password;
 
+    //constructores
     public User() {
     }
 
@@ -27,6 +29,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    //getters and setters
     public Integer getUserId() {
         return userId;
     }

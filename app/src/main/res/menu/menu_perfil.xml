@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/mnCambiar"
-        android:title="@string/cambiar_contraseña" />
+        android:title="@string/verYcambiar" />
     <item
         android:id="@+id/mnPremium"
         android:title="@string/hacerse_premium"/>

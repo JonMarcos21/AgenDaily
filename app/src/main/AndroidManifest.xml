@@ -34,9 +34,6 @@
             android:name=".diario.AgregarDiario"
             android:exported="true" />
         <activity
-            android:name=".activitys.Usuario"
-            android:exported="true" />
-        <activity
             android:name=".calendario.Calendario"
             android:exported="true" />
         <activity
@@ -49,13 +46,7 @@
             android:name=".diario.Diarios"
             android:exported="true" />
         <activity
-            android:name=".ContrasenaOlvidada"
-            android:exported="true" />
-        <activity
             android:name=".activitys.Menus"
-            android:exported="true" />
-        <activity
-            android:name=".Formulario"
             android:exported="true" />
         <activity
             android:name=".activitys.Autenticacion"

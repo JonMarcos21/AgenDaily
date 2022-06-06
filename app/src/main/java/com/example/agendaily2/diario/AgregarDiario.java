@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 
 public class AgregarDiario extends AppCompatActivity {
 
+    //creación de variables para almacenar los elementos del layout
     private EditText  editTextDescriptionDiario ,editTextFechaDiario;
     private TextView textViewIdDiario, textViewEncodeDiario, textViewUserIdDiario;
     private ImageView imageViewAttachedDiario, imageViewDialogDiario;
@@ -39,7 +40,7 @@ public class AgregarDiario extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Editor de diario");
 
-
+        //inicializamos las variables creadas y le asignamos a los elementos del layout
 
         componentAgendaily = new ComponentAgendaily(this);
         progressDialog = new ProgressDialog(AgregarDiario.this);
@@ -100,16 +101,19 @@ public class AgregarDiario extends AppCompatActivity {
         }
 
     }
+
+    //creamos el menú
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu_agregardiario, menu);
         return true;
     }
+    //Creación de los items del menu
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
             case R.id.item_shareDiario:
-                shareNote();
+                shareDiario();
                 break;
 
             case R.id.InfoAgregardiario:
@@ -138,7 +142,7 @@ public class AgregarDiario extends AppCompatActivity {
      *Leemos la fecha  y la descripcion del diario para mandarla como texto plano a la aplicacion
      * que elija el usuario
      */
-    private void shareNote() {
+    private void shareDiario() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_TEXT, editTextFechaDiario.getText().toString()
                 + "\n\n" + editTextDescriptionDiario.getText().toString());

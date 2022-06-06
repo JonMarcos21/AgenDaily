@@ -28,8 +28,7 @@ public class AgendaOpenHelper extends SQLiteOpenHelper {
 
         agendas.execSQL("create table DIARIO(DIARIO_ID Integer primary key autoincrement, FECHA text, DESCRIPTION text," +
                 " ENCODE Integer DEFAULT 0 , USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
-        agendas.execSQL("create table RECORDATORIO(RECORDATORIO_ID Integer primary key autoincrement, TITLE text, DESCRIPTION text," +
-                " HORA Integer default 0, USER_ID Integer, FOREIGN KEY(USER_ID) REFERENCES USER(USER_ID))");
+
 
     }
 
@@ -42,7 +41,6 @@ public class AgendaOpenHelper extends SQLiteOpenHelper {
         agendas.execSQL("drop table USER");
         agendas.execSQL("drop table NOTE");
         agendas.execSQL("drop table DIARIO");
-        agendas.execSQL("drop table RECORDATORIO");
 
         onCreate(agendas);
     }

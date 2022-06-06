@@ -104,12 +104,15 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
         finish();
 
     }
+
+    //Iniciamos los elementos creados para el recyclerView y para monstrar los meses
     private void initWidgets()
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
     }
 
+    //creamos una vista de cada mes
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void setMonthView()
     {
@@ -123,6 +126,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
+    //creamos un arraylist de dias del mes para almacenar los dias
     private ArrayList<String> daysInMonthArray(LocalDate date)
     {
         ArrayList<String> daysInMonthArray = new ArrayList<>();
@@ -133,6 +137,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
         LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
+        //creamos un for que recorra los dias de la semana
         for(int i = 1; i <= 42; i++)
         {
             if(i <= dayOfWeek || i > daysInMonth + dayOfWeek)
@@ -146,14 +151,14 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
         }
         return  daysInMonthArray;
     }
-
+//Le damos formato de salida a la fecha
     @RequiresApi(api = Build.VERSION_CODES.O)
     private String monthYearFromDate(LocalDate date)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
-
+    //Creacion para pasar el mes para atras
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void previousMonthAction(View view)
     {
@@ -161,6 +166,7 @@ public class Calendario extends AppCompatActivity implements CalendarAdapter.OnI
         setMonthView();
     }
 
+    //Creacion para pasar de mes para adelante
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void nextMonthAction(View view)
     {

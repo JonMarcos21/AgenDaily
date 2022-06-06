@@ -34,12 +34,13 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import java.util.Calendar;
 
 public class Avisos extends AppCompatActivity {
-    private EditText titulo;
+
     private TextView notificationsTime;
     private int alarmID = 1;
     private SharedPreferences settings;
 
     private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +64,13 @@ public class Avisos extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        titulo = (EditText)findViewById(R.id.editTextTextAviso);
 
         notificationsTime = (TextView) findViewById(R.id.notifications_time);
+
+        //creamos un on click para el boton de cambiar la hora
         findViewById(R.id.change_notification).setOnClickListener(new View.OnClickListener() {
             @Override
+            // hcreamos un objeto de tipo calendar y creamos las variable hora y minuto
             public void onClick(View view) {
                 Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
@@ -75,6 +78,7 @@ public class Avisos extends AppCompatActivity {
                 TimePickerDialog mTimePicker;
                 mTimePicker = new TimePickerDialog(Avisos.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
+                    //Creamos una variable time picker y dos ints para almacenar los valores seleccionados
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         String finalHour, finalMinute;
 
@@ -103,7 +107,7 @@ public class Avisos extends AppCompatActivity {
     }
 
     /*
-    *Se crea el boton  en el ActionBar
+    *Se crea el menu
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_ayuda, menu);
@@ -112,7 +116,7 @@ public class Avisos extends AppCompatActivity {
 
 
     /*
-     *Comprobamos si han seleccionado el boton de Ajuste y llamamos a SettingsActivity
+     *Creamos los items del menu
      */
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -156,7 +160,7 @@ public class Avisos extends AppCompatActivity {
         }
 
 
-
+//Intent para guardar la notificación y volver a los menus
     public void save(View view){
 
         Intent save = new Intent(this, Menus.class);

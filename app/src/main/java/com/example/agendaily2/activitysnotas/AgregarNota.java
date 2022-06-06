@@ -33,6 +33,8 @@ import java.util.Arrays;
 
 public class AgregarNota extends AppCompatActivity {
 
+    //Creamos variables para guardar los items del layout
+
     private EditText editTextTitle, editTextDescription;
     private TextView textViewId, textViewEncode, textViewUserId;
     private ImageView imageViewAttachedCamara, imageViewDialog;
@@ -47,11 +49,10 @@ public class AgregarNota extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_nota);
+        //Asignamos un titulo a la actividad
         getSupportActionBar().setTitle("Editor de Notas");
 
-
-
-
+        //hacemos un llamamiento a los métodos creados
         init();
 
         catchNote();
@@ -110,7 +111,7 @@ public class AgregarNota extends AppCompatActivity {
     }
 
     /*
-     *Se inicializan todos los obejetos de la interfaz, el objeto componentNotes y el progressDialog
+     *Se inicializan todos los obejetos de la interfaz, el objeto componentAgendaily y el progressDialog
      */
     private void init() {
         componentAgendaily = new ComponentAgendaily(this);
@@ -201,7 +202,7 @@ public class AgregarNota extends AppCompatActivity {
     }
 
     /*
-     *Capturamos la imagen que elieg el usaurio y la mostramos en el ImageView de la pantalla
+     *Capturamos la imagen que elige el usaurio y la mostramos en el ImageView de la pantalla
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
